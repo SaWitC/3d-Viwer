@@ -1,7 +1,7 @@
 ﻿using Application.Repositories;
 using DataAcces.Models;
 using DataAcces.SettingAndOptionModels;
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Persistence.Data;
@@ -17,11 +17,9 @@ namespace Persistence.Repository
 {
     public class AccountRepository : IAccountRepository
     {
-
         private readonly IOptions<AuthOptions> _options;
         private readonly UserManager<User> _userManager;
         private readonly AppDbContext _appDbContext;
-
         public AccountRepository(IOptions<AuthOptions> options, UserManager<User> userManager, AppDbContext appDbContext)
         {
             _options = options;
@@ -33,7 +31,7 @@ namespace Persistence.Repository
         {
             var authParams = _options.Value;
             var securityKey = authParams.GetSymetricSecurityKey();
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var creditails = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>()
             {
@@ -41,7 +39,7 @@ namespace Persistence.Repository
                 new Claim(JwtRegisteredClaimNames.Email,user.Email),
                 new Claim(JwtRegisteredClaimNames.Name,user.UserName)
             };
-            foreach (var VARIABLE in await _userManager.GetRolesAsync(user.Id))
+            foreach (var VARIABLE in await _userManager.GetRolesAsync(user))
             {
                 claims.Add(new Claim("role", VARIABLE));
             }

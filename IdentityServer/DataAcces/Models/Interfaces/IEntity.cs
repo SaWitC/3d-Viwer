@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataAcces.Models.Interfaces
 {
-    internal class IEntity
+    public  interface IEntity
     {
+        string Id { get; set; }
     }
 }

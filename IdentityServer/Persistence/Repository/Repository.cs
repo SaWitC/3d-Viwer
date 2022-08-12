@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAcces.Models.Interfaces;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Repository
 {
@@ -58,13 +58,14 @@ namespace Persistence.Repository
         {
             if (!string.IsNullOrEmpty(Id))
             {
-                var oldmodel = _appDbContext.Set<T>().FirstOrDefaultAsync(o => o.Id == Id);
-                if (oldmodel != null)
-                {
-                    model.Id = Id;
-                    _appDbContext.Set<T>().Update(model);
-                    return true;
-                }
+                 var oldmodel =await _appDbContext.Set<T>().FirstOrDefaultAsync(o => o.Id == Id);
+            if (oldmodel != null)
+            {
+                model.Id = Id;
+               // _appDbContext.Set<T>
+                _appDbContext.Set<T>().Update(model);
+                return true;
+            }
             }  
             return false;
         }

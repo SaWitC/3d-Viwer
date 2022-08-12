@@ -1,0 +1,12 @@
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\bin\Debug\net6.0\DataAcces.deps.json
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\bin\Debug\net6.0\DataAcces.dll
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\bin\Debug\net6.0\DataAcces.pdb
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\DataAcces.csproj.AssemblyReference.cache
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\DataAcces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\DataAcces.AssemblyInfoInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\DataAcces.AssemblyInfo.cs
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\DataAcces.csproj.CoreCompileInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\DataAcces.dll
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\refint\DataAcces.dll
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\DataAcces.pdb
+C:\Users\USER\Downloads\3d-Viwer\IdentityServer\DataAcces\obj\Debug\net6.0\ref\DataAcces.dll
