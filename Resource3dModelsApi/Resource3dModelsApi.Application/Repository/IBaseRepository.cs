@@ -12,7 +12,7 @@ namespace Resource3dModelsApi.Application.Repository
     {
         Task<EntityEntry<T>> CreateAsync<T>(T model) where T : class, IEntity;
         Task<bool> DeleteAsync<T>(string Id) where T : class, IEntity;
-        Task<bool> UpdateAsync<T>(T model,string Id) where T : class, IEntity;
+        Task<EntityEntry<T>> UpdateAsync<T>(T model,string Id) where T : class, IEntity;
         Task SaveChangesAsync();
         Task<T> GetByIdAsync<T>(string Id) where T : class, IEntity;
         Task<IEnumerable<T>> GetByIdAsync<T>() where T : class, IEntity;
