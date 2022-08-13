@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Resource3dModelsApi.Application.Services.FileResourceServices
 {
-    internal class FileResourceService
+    public interface FileResourceService
     {
+        Task<string> GetFileLink();
+        Task<bool> DeleteFile();
+        Task<bool> CreateFile();
     }
 }

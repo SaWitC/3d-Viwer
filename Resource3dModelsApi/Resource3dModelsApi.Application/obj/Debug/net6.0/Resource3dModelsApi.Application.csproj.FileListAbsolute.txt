@@ -1,0 +1,15 @@
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\bin\Debug\net6.0\Resource3dModelsApi.Application.deps.json
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\bin\Debug\net6.0\Resource3dModelsApi.Application.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\bin\Debug\net6.0\Resource3dModelsApi.Application.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\bin\Debug\net6.0\Resource3dModelsApi.Domain.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\bin\Debug\net6.0\Resource3dModelsApi.Domain.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.csproj.AssemblyReference.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.AssemblyInfoInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.AssemblyInfo.cs
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.csproj.CoreCompileInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.csproj.CopyComplete
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\refint\Resource3dModelsApi.Application.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\Resource3dModelsApi.Application.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Application\obj\Debug\net6.0\ref\Resource3dModelsApi.Application.dll

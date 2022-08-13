@@ -1,0 +1,12 @@
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\bin\Debug\net6.0\Resource3dModelsApi.Domain.deps.json
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\bin\Debug\net6.0\Resource3dModelsApi.Domain.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\bin\Debug\net6.0\Resource3dModelsApi.Domain.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\Resource3dModelsApi.Domain.csproj.AssemblyReference.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\Resource3dModelsApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\Resource3dModelsApi.Domain.AssemblyInfoInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\Resource3dModelsApi.Domain.AssemblyInfo.cs
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\Resource3dModelsApi.Domain.csproj.CoreCompileInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\Resource3dModelsApi.Domain.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\refint\Resource3dModelsApi.Domain.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\Resource3dModelsApi.Domain.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Domain\obj\Debug\net6.0\ref\Resource3dModelsApi.Domain.dll

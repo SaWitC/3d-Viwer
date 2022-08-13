@@ -1,0 +1,17 @@
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\bin\Debug\net6.0\Resource3dModelsApi.Infrastructure.deps.json
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\bin\Debug\net6.0\Resource3dModelsApi.Infrastructure.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\bin\Debug\net6.0\Resource3dModelsApi.Infrastructure.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\bin\Debug\net6.0\Resource3dModelsApi.Application.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\bin\Debug\net6.0\Resource3dModelsApi.Domain.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\bin\Debug\net6.0\Resource3dModelsApi.Application.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\bin\Debug\net6.0\Resource3dModelsApi.Domain.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.AssemblyInfo.cs
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.csproj.CopyComplete
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\refint\Resource3dModelsApi.Infrastructure.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\Resource3dModelsApi.Infrastructure.pdb
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi.Infrastructure\obj\Debug\net6.0\ref\Resource3dModelsApi.Infrastructure.dll

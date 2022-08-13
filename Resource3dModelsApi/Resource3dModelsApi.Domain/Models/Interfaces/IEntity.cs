@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Resource3dModelsApi.Domain.Models.Interfaces
 {
-    internal class IEntity
+    public interface IEntity
     {
+        string Id { get; set; }
     }
 }
