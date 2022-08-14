@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Resource3dModelsApi.Application.Repository;
 using Resource3dModelsApi.Domain.Models.Interfaces;
 using Resource3dModelsApi.Infrastructure.Data;
@@ -23,30 +24,38 @@ namespace Resource3dModelsApi.Infrastructure.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task<EntityEntry<T>> CreateAsync<T>(T model) where T : class, IEntity
-        {
-            var res =await _context.Set<T>().AddAsync(model);
-            return res;
-        }
+        public async Task<EntityEntry<T>> CreateAsync<T>(T model) where T : class, IEntity 
+            =>await _context.Set<T>().AddAsync(model);
 
         public async Task<bool> DeleteAsync<T>(string Id) where T : class, IEntity
         {
-            throw new NotImplementedException();
+            var model = await _context.Set<T>().FirstOrDefaultAsync(x=>x.Id==Id);
+            if (model != null)
+            {
+                _context.Set<T>().Remove(model);
+                return true;
+            }
+            return false;
         }
 
         public async Task<T> GetByIdAsync<T>(string Id) where T : class, IEntity
+            =>await _context.Set<T>().FirstOrDefaultAsync(o=>o.Id==Id);
+
+
+        public async Task<EntityEntry<T>> UpdateAsync<T>(T model, string Id) where T : class, IEntity
 {
-            throw new NotImplementedException();
+            var oldModel = _context.Set<T>().FirstOrDefaultAsync(o => o.Id == Id);
+            if (oldModel != null)
+            {
+                model.Id = Id;
+                return _context.Set<T>().Update(model);
+            }
+            return null;
         }
 
-        public async Task<IEnumerable<T>> GetByIdAsync<T>() where T : class, IEntity
-{
-            throw new NotImplementedException();
-        }
-
-        public async Task<bool> UpdateAsync<T>(T model, string Id) where T : class, IEntity
-{
-            throw new NotImplementedException();
+        public async Task<IEnumerable<T>> GetAllAsync<T>() where T : class, IEntity
+        {
+            return await _context.Set<T>().ToListAsync();
         }
     }
 }
