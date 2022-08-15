@@ -15,6 +15,16 @@ namespace IdentityServer
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //builder.Services.AddCors(o =>
+            //{
+            //    o.AddPolicy("EnableCors", b =>
+            //    {
+            //        b.AllowAnyHeader();
+            //        b.AllowAnyMethod();
+            //        b.AllowAnyOrigin();
+            //    });
+            //});
+
             // Add services to the container.
 
             builder.Services.AddControllers();

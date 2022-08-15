@@ -43,7 +43,7 @@ namespace Resource3dModelsApi.Controllers
 
         // PUT api/<_3dModelController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Update_3dModelCommand update_3DModelCommand)
+        public async Task<IActionResult > Put(int id, [FromBody] Update_3dModelCommand update_3DModelCommand)
         {
             var res = await mediator.Send(update_3DModelCommand);
             return Ok(res.Entity);

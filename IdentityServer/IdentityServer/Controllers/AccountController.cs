@@ -34,7 +34,7 @@ namespace IdentityServer.Controllers
         }
 
         [HttpPost]
-        [Route("api/[controller]/[action]")]
+        [Route("api/[controller]/Register")]
         public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -63,7 +63,7 @@ namespace IdentityServer.Controllers
             }
         }
         [HttpPost]
-        [Route("api/[controller]/[action]")]
+        [Route("api/[controller]/login")]
 
         public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
