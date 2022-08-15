@@ -4,8 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\3dModel",
-    "\\src\\app\\Components\\3dModel\\create3d-model-component",
+    "\\src\\app\\Components\\3dModel\\create",
+    "\\src\\app\\Components\\Account",
+    "\\src\\app\\Components\\Account\\account-login-component",
+    "\\src\\app\\Models",
     "\\src\\app\\Services",
     "\\src\\app\\Services\\Auth"
   ],

@@ -3,6 +3,7 @@ import { JwtHelperService } from "@auth0/angular-jwt"
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { NgForm } from '@angular/forms'
+import { Identityserver_BaseDomain } from '../../../env';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,6 @@ export class AuthServiceService {
     } else {
       return false;
     }
-
   }
 
   logOut() {
@@ -44,7 +44,7 @@ export class AuthServiceService {
     }
     console.log(creadentialsreg)
 
-    return this.http.post("http://localhost:46574/api/Auth/api/Auth/Register", creadentialsreg).subscribe(
+    return this.http.post(Identityserver_BaseDomain+"/Auth/api/Auth/Register", creadentialsreg).subscribe(
       response => {
         console.log("Done");
         this.ErrorMessage = '';
@@ -65,7 +65,7 @@ export class AuthServiceService {
     }
 
     console.log(credentails);
-    this.http.post("https://localhost:7074/api/Account/api/Account/login", credentails).subscribe(
+    this.http.post(Identityserver_BaseDomain+"/Account/api/Account/login", credentails).subscribe(
       response => {
         const token: string = (<any>response).token;
         localStorage.setItem("jwt", token);
