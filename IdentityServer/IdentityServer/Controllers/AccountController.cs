@@ -11,7 +11,7 @@ using System.Text.Json;
 
 namespace IdentityServer.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -50,12 +50,10 @@ namespace IdentityServer.Controllers
 
                         return Ok();
                     }
-
                     //var createduser = _userManager.FindByNameAsync(user.UserName);
-
                 }
                 //_logger.LogWarning("incorrect values ");
-                return BadRequest("Имя пользователя занято");
+                return BadRequest(result.Errors);
             }
             else
             {

@@ -1,1 +1,1 @@
-export const Identityserver_BaseDomain = "http://localhost:46574/api";
+export const Identityserver_BaseDomain = "https://localhost:7074";

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthServiceService } from '../../../Services/Auth/auth-service.service'
+import { LoginVM } from '../../../Models/Account/LoginVM/login-vm.model'
 
 @Component({
   selector: 'app-account-login-component',
@@ -20,6 +21,11 @@ export class AccountLoginComponentComponent implements OnInit {
   }
 
   public login(ngForm: NgForm) {
-    this.auth.login(ngForm);
+
+    var model = new LoginVM();
+
+    model.UserName = ngForm.value.UserName;
+    model.Password = ngForm.value.Password;
+    this.auth.login(model);
   }
 }

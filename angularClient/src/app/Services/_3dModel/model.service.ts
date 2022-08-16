@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,23 @@ import { Injectable } from '@angular/core';
 })
 export class ModelService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  public Create() {
+    //this.http.post()
+  }
+
+  public Update() {
+
+  }
+
+  public Delete() {
+
+  }
+
+  public GetById() {
+
+  }
+
+
 }

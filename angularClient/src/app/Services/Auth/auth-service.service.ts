@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { NgForm } from '@angular/forms'
 import { Identityserver_BaseDomain } from '../../../env';
+import { RegisterVM } from '../../Models/Account/RegisterVM/register-vm.model';
+import { LoginVM } from '../../Models/Account/LoginVM/login-vm.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,15 +39,8 @@ export class AuthServiceService {
     this.invalidLogin = true;
   }
 
-  Register(form: NgForm) {
-    const creadentialsreg = {
-      Email: form.value.Email,
-      userName: form.value.UserName,
-      password: form.value.Password
-    }
-    console.log(creadentialsreg)
-
-    return this.http.post(Identityserver_BaseDomain+"/Auth/api/Auth/Register", creadentialsreg).subscribe(
+  Register(RegisterVM: RegisterVM) {
+    return this.http.post(Identityserver_BaseDomain + "/api/Account/Register", RegisterVM).subscribe(
       response => {
         console.log("Done");
         this.ErrorMessage = '';
@@ -58,14 +54,8 @@ export class AuthServiceService {
   }
 
 
-  login(form: NgForm) {
-    const credentails = {
-      userName: form.value.UserName,
-      password: form.value.Password
-    }
-
-    console.log(credentails);
-    this.http.post(Identityserver_BaseDomain+"/Account/api/Account/login", credentails).subscribe(
+  login(model: LoginVM) {
+    this.http.post(Identityserver_BaseDomain + "/api/Account/login", model).subscribe(
       response => {
         const token: string = (<any>response).token;
         localStorage.setItem("jwt", token);

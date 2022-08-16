@@ -10,6 +10,7 @@ import { AccountLoginComponentComponent } from './Components/Account/account-log
 import { AuthServiceService } from './Services/Auth/auth-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
+import { RegisterComponent } from './Components/Account/register/register.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -20,7 +21,8 @@ export function tokenGetter() {
     AppComponent,
     CreateComponent,
     DetailsComponent,
-    AccountLoginComponentComponent
+    AccountLoginComponentComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
