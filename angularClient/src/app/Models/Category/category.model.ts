@@ -1,5 +1,5 @@
 export class Category {
-  public Id: string;
-  public Title: string;
-  public Description: string
+  public id: string;
+  public title: string;
+  public description: string
 }

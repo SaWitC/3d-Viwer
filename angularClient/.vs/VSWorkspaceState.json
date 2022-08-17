@@ -5,13 +5,12 @@
     "\\src\\app",
     "\\src\\app\\Components",
     "\\src\\app\\Components\\3dModel",
-    "\\src\\app\\Components\\3dModel\\create",
-    "\\src\\app\\Components\\Account",
     "\\src\\app\\Models",
-    "\\src\\app\\Models\\Category",
-    "\\src\\app\\Services",
-    "\\src\\app\\Services\\Category"
+    "\\src\\app\\Models\\Account",
+    "\\src\\app\\Models\\Account\\LoginVM",
+    "\\src\\app\\Models\\Account\\RegisterVM",
+    "\\src\\app\\Services"
   ],
-  "SelectedNode": "\\src\\app\\Models\\Category\\category.model.ts",
+  "SelectedNode": "\\src\\app\\Components\\3dModel\\create\\create.component.html",
   "PreviewInSolutionExplorer": false
 }

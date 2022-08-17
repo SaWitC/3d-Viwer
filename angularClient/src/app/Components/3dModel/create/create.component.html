@@ -20,7 +20,11 @@
 
     <div class="form-group">
       <label>Category</label>
-      <input class="input-group" type="text" />
+
+      <select class="input-group ">
+        <option *ngFor="let item of this.CategoryS.Categories">{{item.title}}</option>
+      </select>
+
     </div>
     <button type="submit">Create</button>
   </form>

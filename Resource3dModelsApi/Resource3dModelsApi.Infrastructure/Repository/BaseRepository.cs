@@ -39,12 +39,14 @@ namespace Resource3dModelsApi.Infrastructure.Repository
         }
 
         public async Task<T> GetByIdAsync<T>(string Id) where T : class, IEntity
-            =>await _context.Set<T>().FirstOrDefaultAsync(o=>o.Id==Id);
+        { 
+            return await _context.Set<T>().FirstOrDefaultAsync(o => o.Id == Id);
+        }
 
 
         public async Task<EntityEntry<T>> UpdateAsync<T>(T model, string Id) where T : class, IEntity
 {
-            var oldModel = _context.Set<T>().FirstOrDefaultAsync(o => o.Id == Id);
+            var oldModel = await _context.Set<T>().FirstOrDefaultAsync(o => o.Id == Id);
             if (oldModel != null)
             {
                 model.Id = Id;

@@ -25,6 +25,16 @@ builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configur
 builder.Services.AddMediatR(typeof(Resource3dModelsApi.Infrastructure.Startup).Assembly);
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
+builder.Services.AddCors(o =>
+{
+    o.AddPolicy("test", p =>
+    {
+        p.AllowAnyHeader();
+        p.AllowAnyMethod();
+        p.AllowAnyOrigin();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -50,6 +60,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("test");
 
 app.UseHttpsRedirection();
 
