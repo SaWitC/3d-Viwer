@@ -23,6 +23,13 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
 
             RuleFor(x => x.model.AvtorId)
                .NotEmpty();
+
+            RuleFor(x => x.Token)
+                .NotNull()
+                .MinimumLength(58);
+
+            RuleFor(x => x.model.File)
+                .NotNull();
         }
     }
 }

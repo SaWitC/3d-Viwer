@@ -1,4 +1,5 @@
-﻿using Resource3dModelsApi.Domain.Models.Interfaces;
+﻿using Microsoft.AspNetCore.Http;
+using Resource3dModelsApi.Domain.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Resource3dModelsApi.Domain.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime CreatedDate { get; set; }   
+        public IFormFile File { get; set; }
         public Category category { get; set; }
         public string AvtorId { get; set; }
     }

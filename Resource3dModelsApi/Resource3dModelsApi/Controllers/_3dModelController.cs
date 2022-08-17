@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Resource3dModelsApi.Domain.ConfigurationModels;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3dModel;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3dModel;
 
@@ -11,11 +12,12 @@ namespace Resource3dModelsApi.Controllers
     [ApiController]
     public class _3dModelController : ControllerBase
     {
-
+        private readonly IConfiguration _configuration;
         private readonly IMediator mediator;
-        public _3dModelController(IMediator mediator)
+        public _3dModelController(IMediator mediator, IConfiguration configuration)
         {
             this.mediator = mediator;
+            _configuration = configuration;
         }
 
 
@@ -37,6 +39,8 @@ namespace Resource3dModelsApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Create_3dModelCommand create_3DModelCommand)
         {
+            var data = _configuration.GetSection("FileServiceConfiguration").Get<FileServiceConfiguration>();
+            create_3DModelCommand.Token = data.Token;
             var res =await mediator.Send(create_3DModelCommand);
             return Ok(res.Entity);
         }

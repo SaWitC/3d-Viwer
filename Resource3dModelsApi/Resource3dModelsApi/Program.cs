@@ -2,8 +2,11 @@ using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Resource3dModelsApi.Application.Repository;
+using Resource3dModelsApi.Application.Services.FileResourceServices;
+using Resource3dModelsApi.Domain.ConfigurationModels;
 using Resource3dModelsApi.Infrastructure.Data;
 using Resource3dModelsApi.Infrastructure.Repository;
+using Resource3dModelsApi.Infrastructure.Services;
 using Resource3dModelsApi.Infrastructure.ValidationPipeline;
 using System.Reflection;
 
@@ -24,6 +27,8 @@ builder.Services.AddTransient<IBaseRepository, BaseRepository>();
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddMediatR(typeof(Resource3dModelsApi.Infrastructure.Startup).Assembly);
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
+builder.Services.AddTransient<IFileResourceService, YandexFileResourceService>();
 
 builder.Services.AddCors(o =>
 {

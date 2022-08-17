@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J5O2oefuby2RHhx3d7kiyuUtlc3nFlieOXZpZ4ZAWBd1lzCOYx71C3QSbWwPu5fEtYyGfto3Cp8RYIiSKk7IQg==",
+  "dgSpecHash": "rZtcPXxoNBcZlfy2OQ/cE9eYioLgETFyavh+prz8LC5Bq7el5qRzpSJm9gHXO0abV9YaZd17rhUE5Kq6gd55FA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Downloads\\3d-Viwer\\Resource3dModelsApi\\Resource3dModelsApi.Application\\Resource3dModelsApi.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.8\\microsoft.entityframeworkcore.abstractions.6.0.8.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.8\\microsoft.entityframeworkcore.analyzers.6.0.8.nupkg.sha512",
@@ -17,6 +18,7 @@
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
