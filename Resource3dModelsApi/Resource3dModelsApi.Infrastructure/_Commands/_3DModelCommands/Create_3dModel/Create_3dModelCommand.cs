@@ -11,6 +11,10 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
 {
     public class Create_3dModelCommand:IRequest<EntityEntry<_3dModel>>
     {
-        public _3dModel model { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string category { get; set; }
+
+        public string AvtorId { get; set; }
     }
 }

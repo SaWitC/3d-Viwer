@@ -97,7 +97,9 @@ namespace IdentityServer
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseCors(o =>
             {
                 o.AllowAnyMethod();

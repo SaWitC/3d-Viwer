@@ -16,5 +16,9 @@ namespace Resource3dModelsApi.Application.Repository
         Task SaveChangesAsync();
         Task<T> GetByIdAsync<T>(string Id) where T : class, IEntity;
         Task<IEnumerable<T>> GetAllAsync<T>() where T : class, IEntity;
+
+        Task<T> GetByTitleAsync<T>(string Title) where T : class, IEntity,IEntityWithTitle;
+
     }
+
 }

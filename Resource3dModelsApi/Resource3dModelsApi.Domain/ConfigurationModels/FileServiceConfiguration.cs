@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Resource3dModelsApi.Domain.ConfigurationModels
 {
-    public class Data
+    public class FileServiceConfiguration
     {
         public string Token { get; set; }
     }

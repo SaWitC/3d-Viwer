@@ -98,5 +98,12 @@ namespace IdentityServer.Controllers
             return Ok(await _userManager.FindByIdAsync(this.Id.ToString()));
 
         }
+
+        [HttpGet("[action]")]
+        [Authorize]
+        public IActionResult wt()
+        {
+            return Ok(/*Id.ToString()*/);
+        }
     }
 }

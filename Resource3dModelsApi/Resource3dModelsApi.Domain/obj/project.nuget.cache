@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "IUU82YbrY8Zbetk9n4MtyMM5Klr3jwfOvEX2PnpITWTywqBdx0K1K95D5XGR1z+ggpTDudR2x7TWzraAoM17lg==",
+  "dgSpecHash": "OQ4J1LyCo8Nu8zbqdNl9ZInNCJZGkUTSBnI8Iez1W9oeF5guOGabnuQcB0ZlQSdAPydCSco7I79Tzgc97xdzqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Downloads\\3d-Viwer\\Resource3dModelsApi\\Resource3dModelsApi.Domain\\Resource3dModelsApi.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

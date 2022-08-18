@@ -59,5 +59,10 @@ namespace Resource3dModelsApi.Infrastructure.Repository
         {
             return await _context.Set<T>().ToListAsync();
         }
+        public async Task<T> GetByTitleAsync<T>(string Title) where T : class, IEntity, IEntityWithTitle
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(o => o.Title == Title);
+        }
+
     }
 }

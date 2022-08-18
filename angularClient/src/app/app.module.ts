@@ -11,6 +11,8 @@ import { AuthServiceService } from './Services/Auth/auth-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { RegisterComponent } from './Components/Account/register/register.component';
+import { CategoryServiceService } from './Services/Category/category-service.service';
+import { FileUploadComponent } from './Components/File/file-upload/file-upload.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -22,9 +24,11 @@ export function tokenGetter() {
     CreateComponent,
     DetailsComponent,
     AccountLoginComponentComponent,
-    RegisterComponent
+    RegisterComponent,
+    FileUploadComponent
   ],
   imports: [
+    //MatIconModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -33,12 +37,12 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: [],
+        allowedDomains: ["localhost:7074", "localhost:7006"],
         disallowedRoutes:[]
       }
     })
   ],
-  providers: [AuthServiceService],
+  providers: [AuthServiceService, CategoryServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

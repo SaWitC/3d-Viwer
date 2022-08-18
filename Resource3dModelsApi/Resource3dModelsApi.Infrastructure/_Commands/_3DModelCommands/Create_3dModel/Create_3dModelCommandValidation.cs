@@ -11,25 +11,22 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
     {
         public Create_3dModelCommandValidation()
         {
-            RuleFor(x => x.model.Title)
+            RuleFor(x => x.Title)
                 .NotEmpty()
                 .MinimumLength(3)
                 .MaximumLength(30);
 
-            RuleFor(x => x.model.Description)
+            RuleFor(x => x.Description)
                .NotEmpty()
                .MinimumLength(100)
                .MaximumLength(1500);
 
-            RuleFor(x => x.model.AvtorId)
-               .NotEmpty();
+            //RuleFor(x => x.model.AvtorId)
+            //   .NotEmpty();
 
-            RuleFor(x => x.Token)
-                .NotNull()
-                .MinimumLength(58);
-
-            RuleFor(x => x.model.File)
-                .NotNull();
+            RuleFor(x => x.category)
+                .NotEmpty();
+          
         }
     }
 }

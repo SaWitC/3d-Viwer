@@ -15,9 +15,9 @@ namespace Resource3dModelsApi.Infrastructure.Data
             {
                 await _context.AddRangeAsync(new List<Category>
                 {
-                    new Category{Title="Animal",Description="different animals"},
-                    new Category{Title="car", Description="different cars"},
-                    new Category{Title="art", Description="different arts"},
+                    new Category{Id =Guid.NewGuid().ToString(),Title="Animal",Description="different animals"},
+                    new Category{Id =Guid.NewGuid().ToString(),Title="car", Description="different cars"},
+                    new Category{Id =Guid.NewGuid().ToString(),Title="art", Description="different arts"},
                 });
                 await _context.SaveChangesAsync();
             }

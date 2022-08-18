@@ -69,6 +69,17 @@ export class AuthServiceService {
       });
   }
 
+
+  wt() {
+    this.http.get("https://localhost:7006/api/_3dModel/1").subscribe(
+      response => {
+        console.log("response");
+      },
+      err => {
+        console.log(err);
+      });
+  }
+
   //GetInfoAboutCurrentUser() {
   //  return this.http.get("http://localhost:46574/api/Auth/GetInfoAbutUser").subscribe(res => {
   //    console.log(res);

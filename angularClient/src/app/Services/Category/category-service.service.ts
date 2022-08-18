@@ -15,7 +15,7 @@ export class CategoryServiceService {
   public GetCategories() {
     this.http.get(ResourceServer_BaseDomain + "api/" + ResourceServer_CategoryController).subscribe(res => {
       this.Categories = res as Category[];
-      console.log(this.Categories);
+      console.log("done")
     },
       err => {
         console.log(err);

@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\3dModel",
-    "\\src\\app\\Models",
-    "\\src\\app\\Models\\Account",
-    "\\src\\app\\Models\\Account\\LoginVM",
-    "\\src\\app\\Models\\Account\\RegisterVM",
-    "\\src\\app\\Services"
+    "\\src\\app\\Components\\Account",
+    "\\src\\app\\Components\\Account\\account-login-component",
+    "\\src\\app\\Guards",
+    "\\src\\app\\Guards\\Auth",
+    "\\src\\app\\Services",
+    "\\src\\app\\Services\\Auth"
   ],
-  "SelectedNode": "\\src\\app\\Components\\3dModel\\create\\create.component.html",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -1,5 +1,6 @@
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Resource3dModelsApi.Application.Repository;
 using Resource3dModelsApi.Application.Services.FileResourceServices;
@@ -29,6 +30,27 @@ builder.Services.AddMediatR(typeof(Resource3dModelsApi.Infrastructure.Startup).A
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 builder.Services.AddTransient<IFileResourceService, YandexFileResourceService>();
+
+var authOptions =builder.Configuration.GetSection("Auth").Get<AuthModel>();
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = authOptions.Issuer,
+
+        ValidateAudience = true,
+        ValidAudience = authOptions.Audience,
+
+        ValidateLifetime = true,
+
+        IssuerSigningKey = authOptions.GetSymetricSecurityKey(),
+        ValidateIssuerSigningKey = true
+    };
+});
 
 builder.Services.AddCors(o =>
 {
@@ -70,6 +92,7 @@ app.UseCors("test");
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

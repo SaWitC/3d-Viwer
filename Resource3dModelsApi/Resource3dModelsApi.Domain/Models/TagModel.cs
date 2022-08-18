@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Resource3dModelsApi.Domain.Models
 {
-    public class TagModel:IEntity
+    public class TagModel:IEntity, IEntityWithTitle
     {
         public string Id { get; set; }
         public string Title { get; set; }

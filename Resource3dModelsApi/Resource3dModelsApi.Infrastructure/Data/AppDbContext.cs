@@ -15,5 +15,7 @@ namespace Resource3dModelsApi.Infrastructure.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<TagModel> Tags { get; set; }
         public DbSet<Tags_Models_Relationship> tags_Models_Relationships { get; set; }
+
+
     }
 }

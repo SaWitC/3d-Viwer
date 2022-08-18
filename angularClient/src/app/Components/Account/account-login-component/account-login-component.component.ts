@@ -28,4 +28,8 @@ export class AccountLoginComponentComponent implements OnInit {
     model.Password = ngForm.value.Password;
     this.auth.login(model);
   }
+
+  public wt() {
+    this.auth.wt();
+  }
 }
