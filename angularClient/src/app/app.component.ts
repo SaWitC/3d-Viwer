@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {AuthServiceService } from './Services/Auth/auth-service.service'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,18 @@ import { Component } from '@angular/core';
     '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(public auth: AuthServiceService) { }
+
+  ngOnInit(): void {
+    //this.invalidLogin = this.auth.invalidLogin;
+  }
+
+
+  public logout() {
+    
+    this.auth.logOut();
+  }
   title = 'angularClient';
 }

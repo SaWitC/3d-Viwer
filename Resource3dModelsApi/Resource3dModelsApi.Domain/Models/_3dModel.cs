@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Resource3dModelsApi.Domain.Models
 {
-    public class _3dModel:IEntity, IEntityWithTitle
+    public class _3dModel:IEntity, IEntityWithTitle, IHasAvtor
     {
         public string Id { get; set; }
         public string Title { get; set; }

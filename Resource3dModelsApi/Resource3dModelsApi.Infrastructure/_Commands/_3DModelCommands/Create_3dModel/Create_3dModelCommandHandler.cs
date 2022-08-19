@@ -27,16 +27,20 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
 
             model.Title = request.Title;
             model.Description = request.Description;
-            model.category = await _baseRepository.GetByTitleAsync<Category>(request.category);
-            model.Id = Guid.NewGuid().ToString();
-            model.CreatedDate = DateTime.Now;
-            //var Token =
 
-            //await _fileResourceService.CreateFile(request.Token, request.model.Title, request.model.File, Path.GetFileNameWithoutExtension(request.model.File.FileName));
+            var category =await _baseRepository.GetByTitleAsync<Category>(request.category);
+            if (category != null)
+            {
+                model.category = category;
+                model.Id = Guid.NewGuid().ToString();
+                model.AvtorId = request.AvtorId;
+                model.CreatedDate = DateTime.Now;
 
-            var res=await _baseRepository.CreateAsync<_3dModel>(model);
-            await _baseRepository.SaveChangesAsync();
-            return res;
+                var res = await _baseRepository.CreateAsync<_3dModel>(model);
+                await _baseRepository.SaveChangesAsync();
+                return res;
+            }
+            throw new Exception("Incorrect category");
         }
     }
 }

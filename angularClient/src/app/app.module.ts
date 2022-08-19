@@ -13,6 +13,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { RegisterComponent } from './Components/Account/register/register.component';
 import { CategoryServiceService } from './Services/Category/category-service.service';
 import { FileUploadComponent } from './Components/File/file-upload/file-upload.component';
+import { MyModelsComponent } from './Components/3dModel/my-models/my-models.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -25,7 +26,8 @@ export function tokenGetter() {
     DetailsComponent,
     AccountLoginComponentComponent,
     RegisterComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    MyModelsComponent
   ],
   imports: [
     //MatIconModule,

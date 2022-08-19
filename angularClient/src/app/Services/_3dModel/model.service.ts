@@ -8,6 +8,10 @@ import { Model3D } from '../../Models/3DModel/model3-d.model';
 })
 export class ModelService {
 
+  //data
+  public MyModels: Model3D[];
+
+
   constructor(private http: HttpClient) { }
 
   public Create(model: Model3D) {
@@ -17,6 +21,17 @@ export class ModelService {
       err => {
         console.log(err);
       }    )
+  }
+
+  public GetMyModels(page: number) {
+
+    console.log("https://localhost:7006/api/_3dModel/GetMyModels/0");
+    this.http.get(ResourceServer_BaseDomain +"api/" +ResourceServer__3dModelController + "/GetMyModels/" + page).subscribe(res => {
+      console.log(res)
+    },
+    err => {
+        console.log(err)
+    });
   }
 
   public Update() {

@@ -1,6 +1,7 @@
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using Resource3dModelsApi.Application.Repository;
 using Resource3dModelsApi.Application.Services.FileResourceServices;
@@ -24,6 +25,8 @@ builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>),typeof(ValidationBehavior<,>));
 
 builder.Services.AddTransient<IBaseRepository, BaseRepository>();
+builder.Services.AddTransient<ISelectRepository, SelectRepository>();
+
 
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddMediatR(typeof(Resource3dModelsApi.Infrastructure.Startup).Assembly);
@@ -32,6 +35,13 @@ builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddTransient<IFileResourceService, YandexFileResourceService>();
 
 var authOptions =builder.Configuration.GetSection("Auth").Get<AuthModel>();
+
+builder.Services.Configure<FormOptions>(o =>
+{
+    o.ValueLengthLimit = int.MaxValue;
+    o.MultipartBoundaryLengthLimit = int.MaxValue;
+    o.MemoryBufferThreshold = int.MaxValue;
+});
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -87,10 +97,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseHttpsRedirection();
 app.UseCors("test");
 
-app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();

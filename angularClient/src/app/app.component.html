@@ -5,21 +5,26 @@
   </a>
 
   <ul class="nav nav-pills me-5">
-    <li><a class="btn text-white" routerLink="/AccountLogin">Логин</a></li>
+    <li><a class="btn text-white" routerLink="/AccountLogin">signin</a></li>
 
     <!--<li class="nav-item">
-      <ng-template #logout>
-        <div>
-          <button (click)="logOut()" class="text-white btn">Выйти</button>
-        </div>
-      </ng-template>
-    </li>-->
+    <ng-template #logout>
+      <div>
+        <button (click)="logOut()" class="text-white btn">Выйти</button>
+      </div>
+    </ng-template>
+  </li>-->
 
-    <li class="nav-item"><a class="btn text-white" routerLink="/Register">Регистрация</a></li>
+    <!--<div *ngIf="auth.isAuhtenticated();">
+      <li><a (click)="logout()">Logout</a></li>
+    </div>-->
+
+
+    <li class="nav-item"><a class="btn text-white" routerLink="/Register">Register</a></li>
     <li class="nav-item"><a class="btn text-white" routerLink="/PersonalData">Аккаунт</a></li>
 
     <li class="nav-item"> <a class="btn text-white" routerLink="/Create3dModel">CreateTest</a></li>
-    <li class="nav-item"> <a class="btn text-white" routerLink="/">start</a></li>
+    <li class="nav-item"> <a class="btn text-white" routerLink="/MyModels">MyModels</a></li>
     <li class="nav-item"><a class="btn text-white" routerLink="/Tests">Тесты</a></li>
   </ul>
 </header>
