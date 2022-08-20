@@ -1,1 +1,12 @@
 <p>my-models works!</p>
+
+<div>
+  <div *ngFor="let model of this.ModelS.MyModels">
+    <h2>{{model.title}}</h2>
+    <div>
+      <app-file-upload apiPath="{{apiPath}}{{model.id}}"></app-file-upload>
+    </div>
+  </div>
+</div>
+
+

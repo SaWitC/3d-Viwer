@@ -5,12 +5,12 @@
     "\\src\\app",
     "\\src\\app\\Components",
     "\\src\\app\\Components\\3dModel",
+    "\\src\\app\\Components\\3dModel\\create",
     "\\src\\app\\Components\\3dModel\\my-models",
-    "\\src\\app\\Components\\File\\file-upload",
-    "\\src\\app\\Guards\\Auth",
+    "\\src\\app\\Components\\3dModel\\viwer",
     "\\src\\app\\Services",
-    "\\src\\app\\Services\\Auth"
+    "\\src\\app\\Services\\_3dModel"
   ],
-  "SelectedNode": "\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\src\\app\\Components\\3dModel\\viwer\\viwer.component.ts",
   "PreviewInSolutionExplorer": false
 }

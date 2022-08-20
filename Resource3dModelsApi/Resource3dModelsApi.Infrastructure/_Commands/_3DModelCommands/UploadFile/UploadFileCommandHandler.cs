@@ -26,17 +26,23 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.UploadFi
         public async Task<bool> Handle(UploadFileCommand request, CancellationToken cancellationToken)
         {
             var model = await _baseRepository.GetByIdAsync<_3dModel>(request.id);
-            var folderName = model.Title+model.Id.ToString();
-
-            var Token = _configuration["FileServiceConfiguration:Token"];
-
-            var UploadRes =await _fileResourceService.CreateFile(Token, model.Title, request.file, Path.GetFileNameWithoutExtension(request.file.FileName));
-            if (UploadRes)
+            if (model != null)
             {
-                model.IsFileUploaded = true;
-                await _baseRepository.UpdateAsync<_3dModel>(model,model.Id);
+                var folderName = model.Title + model.Id.ToString();
+
+                var Token = _configuration["FileServiceConfiguration:Token"];
+
+                var UploadRes = await _fileResourceService.CreateFile(Token, model.Title, request.file, Path.GetFileNameWithoutExtension(request.file.FileName));
+                if (UploadRes)
+                {
+                    model.IsFileUploaded = true;
+                    await _baseRepository.UpdateAsync<_3dModel>(model, model.Id);
+                    await _baseRepository.SaveChangesAsync();
+                    return true;
+                }
+                return false;
             }
-            return true;
+            return false;
         }
     }
 }

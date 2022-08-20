@@ -1,6 +1,11 @@
 <p>create works!</p>
 
 <div>
+
+  <div>
+    <p class="text-danger">файл должен быть расширения jltf и в названии содержать не более 1 точки.</p>
+  </div>
+
   <form class="form-group" #form="ngForm" (ngSubmit)="Create(form)" enctype="multipart/form-data">
     <div class="form-group">
       <label>Title</label>
@@ -12,9 +17,7 @@
       <input class="input-group" name="description" type="text" ngModel #description />
     </div>
     <!---->
-
     <!--<app-file-upload></app-file-upload>-->
-
     <!---->
 
 

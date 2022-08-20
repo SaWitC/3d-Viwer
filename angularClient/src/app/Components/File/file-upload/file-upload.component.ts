@@ -19,6 +19,9 @@ export class FileUploadComponent implements OnInit {
   @Input()
   requiredFileType: string;
 
+  @Input()
+  apiPath: string;
+
   fileName = '';
   uploadProgress: number;
   uploadSub: Subscription;
@@ -33,7 +36,7 @@ export class FileUploadComponent implements OnInit {
       const formData = new FormData();
       formData.append("file", file, file.name);
 
-      const upload$ = this.http.post("/api/thumbnail-upload", formData, {
+      const upload$ = this.http.post(this.apiPath, formData, {
         reportProgress: true,
         observe: 'events'
       })

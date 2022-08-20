@@ -99,11 +99,11 @@ namespace IdentityServer.Controllers
 
         }
 
-        [HttpGet("[action]")]
-        [Authorize]
-        public IActionResult wt()
-        {
-            return Ok(/*Id.ToString()*/);
-        }
+        //[HttpGet("[action]")]
+        //[Authorize]
+        //public IActionResult wt()
+        //{
+        //    return Ok(/*Id.ToString()*/);
+        //}
     }
 }

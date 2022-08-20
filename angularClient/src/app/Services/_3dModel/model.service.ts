@@ -26,8 +26,8 @@ export class ModelService {
   public GetMyModels(page: number) {
 
     console.log("https://localhost:7006/api/_3dModel/GetMyModels/0");
-    this.http.get(ResourceServer_BaseDomain +"api/" +ResourceServer__3dModelController + "/GetMyModels/" + page).subscribe(res => {
-      console.log(res)
+    this.http.get(ResourceServer_BaseDomain + "api/" + ResourceServer__3dModelController + "/GetMyModels/" + page).subscribe(res => {
+      this.MyModels = res as Model3D[];
     },
     err => {
         console.log(err)

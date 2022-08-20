@@ -64,23 +64,30 @@ namespace Resource3dModelsApi.Controllers
         {
         }
         [Authorize]
-        [HttpPost("Upload {id}")]
+        [HttpPost("Upload/{id}")]
         //[RequestSizeLimit(1000)]
         public async Task<IActionResult> Upload_3dModel(string id)
         {
             try
             {
                 var file = Request.Form.Files[0];
+               
 
-                UploadFileCommand uploadFileCommand = new UploadFileCommand();
-                uploadFileCommand.file = file;
-                uploadFileCommand.id = id;
-                var res =await mediator.Send(uploadFileCommand);
+                if (file.FileName.Count(o => o == '.') == 1&&(Path.GetExtension(file.FileName)==".jltf"))
+                {
+                    UploadFileCommand uploadFileCommand = new UploadFileCommand();
+                    uploadFileCommand.file = file;
+                    uploadFileCommand.id = id;
+                    var res = await mediator.Send(uploadFileCommand);
 
-                if (res)
-                    return Ok();
-                else
-                    return StatusCode(500, $"server exception");
+                    if (res)
+                        return Ok();
+                    else
+                        return StatusCode(500, $"server exception");
+                }
+                //return BadRequest();
+                return BadRequest(new { err = "Incorrect file name or extension" });
+                    
             }
             catch(Exception ex)
             {

@@ -14,6 +14,7 @@ import { RegisterComponent } from './Components/Account/register/register.compon
 import { CategoryServiceService } from './Services/Category/category-service.service';
 import { FileUploadComponent } from './Components/File/file-upload/file-upload.component';
 import { MyModelsComponent } from './Components/3dModel/my-models/my-models.component';
+import { ViwerComponent } from './Components/3dModel/viwer/viwer.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -27,7 +28,8 @@ export function tokenGetter() {
     AccountLoginComponentComponent,
     RegisterComponent,
     FileUploadComponent,
-    MyModelsComponent
+    MyModelsComponent,
+    ViwerComponent
   ],
   imports: [
     //MatIconModule,
