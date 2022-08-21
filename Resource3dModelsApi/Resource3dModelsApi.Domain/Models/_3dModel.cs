@@ -18,5 +18,6 @@ namespace Resource3dModelsApi.Domain.Models
         public Category category { get; set; }
         public string AvtorId { get; set; }
         public bool IsFileUploaded { get; set; } = false;
+        public string FileTitleWithoutExtension { get; set; } = "";
     }
 }

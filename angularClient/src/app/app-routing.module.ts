@@ -5,15 +5,18 @@ import { AccountLoginComponentComponent } from './Components/Account/account-log
 import { CreateComponent } from './Components/3dModel/create/create.component'
 import { RegisterComponent } from './Components/Account/register/register.component'
 import { MyModelsComponent } from './Components/3dModel/my-models/my-models.component'
+import { BrowsernotEnabled3dComponent } from './Components/Errors/browsernot-enabled3d/browsernot-enabled3d.component'
 
 import { AuthGuardService } from './Guards/Auth/auth-guard.service'
+import { IsBrowserEnabledService } from './Guards/IsBrowserenabledRequiredComponents/is-browser-enabled.service'
 
 
 const routes: Routes = [
-  { path: "Create3dModel", component: CreateComponent, canActivate:[AuthGuardService] },
-  { path: "AccountLogin", component: AccountLoginComponentComponent },
-  { path: "Register", component: RegisterComponent },
-  { path: "MyModels", component: MyModelsComponent, canActivate: [AuthGuardService] }
+  { path: "Create3dModel", component: CreateComponent, canActivate: [AuthGuardService, IsBrowserEnabledService] },
+  { path: "AccountLogin", component: AccountLoginComponentComponent, canActivate: [IsBrowserEnabledService] },
+  { path: "Register", component: RegisterComponent, canActivate: [IsBrowserEnabledService] },
+  { path: "MyModels", component: MyModelsComponent, canActivate: [AuthGuardService, IsBrowserEnabledService] },
+  { path: "BrowserNotEnabledWebgl" ,component: BrowsernotEnabled3dComponent }
   
 ];
 

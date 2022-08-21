@@ -12,8 +12,8 @@ using Resource3dModelsApi.Infrastructure.Data;
 namespace Resource3dModelsApi.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220819063555_updated3m")]
-    partial class updated3m
+    [Migration("20220821133142_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,10 @@ namespace Resource3dModelsApi.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileTitleWithoutExtension")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

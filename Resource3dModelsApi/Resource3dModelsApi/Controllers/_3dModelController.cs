@@ -5,6 +5,7 @@ using Resource3dModelsApi.Domain.ConfigurationModels;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3dModel;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3dModel;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.UploadFile;
+using Resource3dModelsApi.Infrastructure._Queries._3DModelQueries.GetModelsQuery;
 using Resource3dModelsApi.Infrastructure._Queries._3DModelQueries.GetMy_3dModels;
 using System.Security.Claims;
 
@@ -29,10 +30,15 @@ namespace Resource3dModelsApi.Controllers
 
 
         // GET: api/<_3dModelController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("Get/{page}")]
+        public async Task<IActionResult> Get(int page)
         {
-            return new string[] { "value1", "value2" };
+            GetModelsQuery getModelsQuery = new GetModelsQuery();
+            if (page>0)
+                getModelsQuery.page=page;
+
+            var links = await mediator.Send(getModelsQuery);
+            return Ok(links);
         }
 
         // GET api/<_3dModelController>/5
@@ -73,7 +79,7 @@ namespace Resource3dModelsApi.Controllers
                 var file = Request.Form.Files[0];
                
 
-                if (file.FileName.Count(o => o == '.') == 1&&(Path.GetExtension(file.FileName)==".jltf"))
+                if (file.FileName.Count(o => o == '.') == 1&&(Path.GetExtension(file.FileName)== ".gltf"|| Path.GetExtension(file.FileName) == ".glb"))
                 {
                     UploadFileCommand uploadFileCommand = new UploadFileCommand();
                     uploadFileCommand.file = file;
@@ -104,5 +110,11 @@ namespace Resource3dModelsApi.Controllers
 
             return Ok(res);
         }
+
+        //[HttpGet()]
+        //public IActionResult GetFileLink()
+        //{
+
+        //}
     }
 }

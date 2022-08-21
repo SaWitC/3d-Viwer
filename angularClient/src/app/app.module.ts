@@ -14,7 +14,8 @@ import { RegisterComponent } from './Components/Account/register/register.compon
 import { CategoryServiceService } from './Services/Category/category-service.service';
 import { FileUploadComponent } from './Components/File/file-upload/file-upload.component';
 import { MyModelsComponent } from './Components/3dModel/my-models/my-models.component';
-import { ViwerComponent } from './Components/3dModel/viwer/viwer.component';
+import { ViwerComponent } from './Components/threeJS/viwer/viwer.component';
+import { BrowsernotEnabled3dComponent } from './Components/Errors/browsernot-enabled3d/browsernot-enabled3d.component'
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -29,7 +30,8 @@ export function tokenGetter() {
     RegisterComponent,
     FileUploadComponent,
     MyModelsComponent,
-    ViwerComponent
+    ViwerComponent,
+    BrowsernotEnabled3dComponent
   ],
   imports: [
     //MatIconModule,

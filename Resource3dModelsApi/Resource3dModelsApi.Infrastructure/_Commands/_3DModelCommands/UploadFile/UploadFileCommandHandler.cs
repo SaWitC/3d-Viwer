@@ -36,6 +36,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.UploadFi
                 if (UploadRes)
                 {
                     model.IsFileUploaded = true;
+                    model.FileTitleWithoutExtension = Path.GetFileNameWithoutExtension(request.file.FileName);
                     await _baseRepository.UpdateAsync<_3dModel>(model, model.Id);
                     await _baseRepository.SaveChangesAsync();
                     return true;

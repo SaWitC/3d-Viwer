@@ -38,6 +38,10 @@ namespace Resource3dModelsApi.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FileTitleWithoutExtension")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsFileUploaded")
                         .HasColumnType("bit");
 

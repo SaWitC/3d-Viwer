@@ -1,16 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\Components",
-    "\\src\\app\\Components\\3dModel",
-    "\\src\\app\\Components\\3dModel\\create",
-    "\\src\\app\\Components\\3dModel\\my-models",
-    "\\src\\app\\Components\\3dModel\\viwer",
-    "\\src\\app\\Services",
-    "\\src\\app\\Services\\_3dModel"
+    "\\src"
   ],
-  "SelectedNode": "\\src\\app\\Components\\3dModel\\viwer\\viwer.component.ts",
+  "SelectedNode": "\\src\\app",
   "PreviewInSolutionExplorer": false
 }

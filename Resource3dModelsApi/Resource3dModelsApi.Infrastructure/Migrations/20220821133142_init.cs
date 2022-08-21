@@ -56,7 +56,9 @@ namespace Resource3dModelsApi.Infrastructure.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     categoryId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    AvtorId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    AvtorId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsFileUploaded = table.Column<bool>(type: "bit", nullable: false),
+                    FileTitleWithoutExtension = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

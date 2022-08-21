@@ -18,9 +18,9 @@ namespace Resource3dModelsApi.Infrastructure.Repository
             this.appDbContext = appDbContext;
         }
 
-        public Task<IQueryable<T>> Select<T>(int page, int size) where T : class, IEntity
+        public IQueryable<T> Select<T>(int page, int size) where T : class, IEntity
         {
-            throw new NotImplementedException();
+            return appDbContext.Set<T>().Skip(0 * size).Take(size);
         }
 
         public IQueryable<T> SelectPageByAvtor<T>(string AvtorId, int page) where T : class, IHasAvtor

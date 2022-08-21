@@ -35,6 +35,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
                 model.Id = Guid.NewGuid().ToString();
                 model.AvtorId = request.AvtorId;
                 model.CreatedDate = DateTime.Now;
+                
 
                 var res = await _baseRepository.CreateAsync<_3dModel>(model);
                 await _baseRepository.SaveChangesAsync();

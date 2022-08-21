@@ -14,7 +14,12 @@ export class AppComponent implements OnInit {
   constructor(public auth: AuthServiceService) { }
 
   ngOnInit(): void {
-    //this.invalidLogin = this.auth.invalidLogin;
+    const gl = document.createElement('canvas').getContext('webgl2');
+    if (!gl) {
+      console.log('your browser/OS/drivers do not support WebGL2');
+    } else {
+      console.log('webgl2 works!');
+    }
   }
 
 
