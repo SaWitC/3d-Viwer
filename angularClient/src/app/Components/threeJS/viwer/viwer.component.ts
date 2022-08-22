@@ -1,5 +1,6 @@
 import { Component,Input, OnInit } from '@angular/core';
 import * as THREE from 'three';
+import { Color } from 'three';
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
@@ -17,59 +18,82 @@ export class ViwerComponent implements OnInit {
 
   @Input() Width: number;
   @Input() Height: number;
+  @Input() CameraPositionZ: number;
+  @Input() BgColor: string;
+  @Input() Turning: boolean = true;
+
 
 
   ngOnInit(): void {
 
-
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });///////
-    renderer.setClearColor("#fff",0)
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    var elem = document.getElementById(this.parentElementId);
-    console.log(this.parentElementId)
-    if (elem != null) {
-      console.log("not null")
-      elem.appendChild(renderer.domElement)
+    const scene = new THREE.Scene();
+    //set bg color
+    var isCorrectColor = new RegExp("/^#([0-9a-f]{3}){1,2}$/i")
+    if (isCorrectColor.test(this.BgColor)) {
+      scene.background = new THREE.Color(this.BgColor)
+    }
+    else {
+      scene.background = new THREE.Color("#fff")
     }
 
-    //document.body.appendChild(renderer.domElement);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    //var cube = new THREE.Mesh(geometry, material);
-    //scene.add(cube);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    //Set into dom
 
-    var loader = new GLTFLoader()//////
-    //loader.load(this.ModelUrl, function (gltf) {
-    //  var obj = gltf;
-    //  obj.scene.scale.set(1.3, 1.3, 1.3)
-    //  scene.add(obj.scene);
-    //});
+    var parentDomElement = document.getElementById(this.parentElementId)
+    console.log("2111    "+parentDomElement)
+    if (parentDomElement != null)
+      parentDomElement.appendChild(renderer.domElement)
+    //else
+      //document.body.appendChild(renderer.domElement);///////update not insert in body
 
-    loader.load("C:\Users\USER\Pictures\blender\art1.gltf", function (gltf) {
-      var obj = gltf;
-      obj.scene.scale.set(1.3, 1.3, 1.3)
-      scene.add(obj.scene);
+    const loader = new GLTFLoader();
+
+    var model;
+
+    loader.load(this.ModelUrl, function (gltf) {
+
+    //loader.load('https://downloader.disk.yandex.ru/disk/cfd1ec6493aa85843eaa9a8f70d2cd5f7db09feb4cd6a4f38e8e35f2beb74958/6303e79a/ZN2nqGcHJidTFqbu4GvgPFFqhH-HAP32C4Gm67Ky1D6Hfl-zYa6J1rX2DGSpxtt0Nte7I12nOAs_4HlNH51Jpw%3D%3D?uid=1616600905&filename=art1.gltf&disposition=attachment&hash=&limit=0&content_type=text%2Fplain&owner_uid=1616600905&fsize=2450491&hid=c1240050fda6f8ae659fd69aa8add648&media_type=text&tknv=v2&etag=67faa85a4f486f3e9202af5366f99af0', function (gltf) {
+      model = gltf.scene;
+      let box3 = new THREE.Box3().setFromObject(model);
+      let center = new THREE.Vector3();
+      box3.getCenter(center);
+      model.position.sub(center);
+      scene.add(model);
+      console.log(model)
+
+    }, undefined, function (error) {
+      console.error(error);
     });
 
-    camera.position.z = 5;
+    const color = "#fff";//light
+    const intensity = 10;
+    const light = new THREE.AmbientLight(color, intensity);
+    scene.add(light);
 
-    //var animate = function () {
-    //  requestAnimationFrame(animate);
 
-    //  cube.rotation.x += 0.01;
-    //  cube.rotation.y += 0.01;
+    //camer setting
+    if (this.CameraPositionZ > 0 && this.CameraPositionZ < 1000) {
+      camera.position.z = this.CameraPositionZ;
+    }
+    else {
+      camera.position.z = 100;
+    }
+    //render
+    renderer.render(scene, camera);
+    //animation
+    if (this.Turning) {
+      function animate() {
+        requestAnimationFrame(animate);
+        model.rotateY(0.002);
+        renderer.render(scene, camera);
+      };
 
-    //  renderer.render(scene, camera);
-    //};
-
-    //animate();
+      animate()
+    }
   }
-  path: string;
 
   constructor() {
    

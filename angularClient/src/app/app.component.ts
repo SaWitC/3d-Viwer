@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
+
 import {AuthServiceService } from './Services/Auth/auth-service.service'
 
 @Component({
@@ -11,7 +17,12 @@ import {AuthServiceService } from './Services/Auth/auth-service.service'
 })
 export class AppComponent implements OnInit {
 
-  constructor(public auth: AuthServiceService) { }
+  constructor(public auth: AuthServiceService)
+  {
+    
+
+
+  }
 
   ngOnInit(): void {
     const gl = document.createElement('canvas').getContext('webgl2');
