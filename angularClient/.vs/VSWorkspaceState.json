@@ -4,9 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\threeJS",
     "\\src\\app\\Components\\threeJS\\viwer"
   ],
-  "SelectedNode": "\\src\\app\\app.component.ts",
+  "SelectedNode": "\\src\\app\\Components\\threeJS",
   "PreviewInSolutionExplorer": false
 }
