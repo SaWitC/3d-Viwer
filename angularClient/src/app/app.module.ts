@@ -13,9 +13,12 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { RegisterComponent } from './Components/Account/register/register.component';
 import { CategoryServiceService } from './Services/Category/category-service.service';
 import { FileUploadComponent } from './Components/File/file-upload/file-upload.component';
-import { MyModelsComponent } from './Components/3dModel/my-models/my-models.component';
+//import { MyModelsComponent } from './Components/3dModel/my-models/my-models.component';
 import { ViwerComponent } from './Components/threeJS/viwer/viwer.component';
 import { BrowsernotEnabled3dComponent } from './Components/Errors/browsernot-enabled3d/browsernot-enabled3d.component'
+import { RouterModule } from '@angular/router';
+//import { MyModelsModule } from './Components/3dModel/my-models/my-models.module';
+//import { RegisterModule } from './Components/Account/register/register.module';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -29,7 +32,7 @@ export function tokenGetter() {
     AccountLoginComponentComponent,
     RegisterComponent,
     FileUploadComponent,
-    MyModelsComponent,
+    //MyModelsComponent,
     ViwerComponent,
     BrowsernotEnabled3dComponent
   ],
@@ -46,7 +49,9 @@ export function tokenGetter() {
         allowedDomains: ["localhost:7074", "localhost:7006"],
         disallowedRoutes:[]
       }
-    })
+    }),
+    //MyModelsModule,
+    //RegisterModule
   ],
   providers: [AuthServiceService, CategoryServiceService],
   bootstrap: [AppComponent]

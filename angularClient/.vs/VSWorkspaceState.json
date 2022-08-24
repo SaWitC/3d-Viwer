@@ -4,8 +4,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\threeJS\\viwer"
+    "\\src\\app\\Components\\3dModel",
+    "\\src\\app\\Components\\3dModel\\my-models",
+    "\\src\\app\\Components\\Account",
+    "\\src\\app\\Components\\Account\\register",
+    "\\src\\app\\Components\\File",
+    "\\src\\app\\Components\\File\\file-upload"
   ],
-  "SelectedNode": "\\src\\app\\Components\\threeJS",
   "PreviewInSolutionExplorer": false
 }

@@ -16,11 +16,9 @@ export class FileUploadComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
 
-  @Input()
-  requiredFileType: string;
+  @Input()requiredFileType: string;
 
-  @Input()
-  apiPath: string;
+  @Input()apiPath: string;
 
   fileName = '';
   uploadProgress: number;
