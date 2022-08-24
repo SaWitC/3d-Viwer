@@ -14,25 +14,26 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+//main
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddValidatorsFromAssembly(typeof(Resource3dModelsApi.Infrastructure.Startup).Assembly);
+//validation
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>),typeof(ValidationBehavior<,>));
-
+//repositories
 builder.Services.AddTransient<IBaseRepository, BaseRepository>();
 builder.Services.AddTransient<ISelectRepository, SelectRepository>();
-
-
+//services
+builder.Services.AddTransient<IFileResourceService, YandexFileResourceService>();
+//databse
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//mediatr
 builder.Services.AddMediatR(typeof(Resource3dModelsApi.Infrastructure.Startup).Assembly);
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+//automapper
+builder.Services.AddAutoMapper(typeof(Resource3dModelsApi.Infrastructure.Startup));
 
-builder.Services.AddTransient<IFileResourceService, YandexFileResourceService>();
 
 var authOptions =builder.Configuration.GetSection("Auth").Get<AuthModel>();
 

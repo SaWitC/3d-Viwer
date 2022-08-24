@@ -19,7 +19,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3
         }
         public async Task<EntityEntry<_3dModel>> Handle(Update_3dModelCommand request, CancellationToken cancellationToken)
         {
-            var res= await _contex.UpdateAsync(request.model, request.Id);
+            var res= await _contex.UpdateAsync(request.model, request.OldModelId);
              await _contex.SaveChangesAsync();
 
             return res;

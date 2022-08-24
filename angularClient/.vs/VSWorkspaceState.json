@@ -5,11 +5,11 @@
     "\\src\\app",
     "\\src\\app\\Components",
     "\\src\\app\\Components\\3dModel",
-    "\\src\\app\\Components\\3dModel\\my-models",
-    "\\src\\app\\Components\\Account",
-    "\\src\\app\\Components\\Account\\register",
-    "\\src\\app\\Components\\File",
-    "\\src\\app\\Components\\File\\file-upload"
+    "\\src\\app\\Components\\File\\file-upload",
+    "\\src\\app\\Models\\3DModel",
+    "\\src\\app\\Models\\3DModel\\Details3DModel",
+    "\\src\\app\\Services\\_3dModel"
   ],
+  "SelectedNode": "\\src\\app\\Components\\3dModel\\details",
   "PreviewInSolutionExplorer": false
 }

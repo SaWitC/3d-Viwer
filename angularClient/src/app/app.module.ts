@@ -17,6 +17,7 @@ import { FileUploadComponent } from './Components/File/file-upload/file-upload.c
 import { ViwerComponent } from './Components/threeJS/viwer/viwer.component';
 import { BrowsernotEnabled3dComponent } from './Components/Errors/browsernot-enabled3d/browsernot-enabled3d.component'
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 //import { MyModelsModule } from './Components/3dModel/my-models/my-models.module';
 //import { RegisterModule } from './Components/Account/register/register.module';
 
@@ -31,13 +32,14 @@ export function tokenGetter() {
     DetailsComponent,
     AccountLoginComponentComponent,
     RegisterComponent,
-    FileUploadComponent,
+    //FileUploadComponent,
     //MyModelsComponent,
     ViwerComponent,
     BrowsernotEnabled3dComponent
   ],
   imports: [
     //MatIconModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -53,6 +55,7 @@ export function tokenGetter() {
     //MyModelsModule,
     //RegisterModule
   ],
+  exports: [JwtModule, BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [AuthServiceService, CategoryServiceService],
   bootstrap: [AppComponent]
 })

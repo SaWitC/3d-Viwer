@@ -11,7 +11,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3
     {
         Update_3dModelCommandValidation()
         {
-            RuleFor(x => x.Id)
+            RuleFor(x => x.OldModelId)
                 .NotEmpty()
                 .NotNull();
 

@@ -32,7 +32,12 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.UploadFi
 
                 var Token = _configuration["FileServiceConfiguration:Token"];
 
-                var UploadRes = await _fileResourceService.CreateFile(Token, model.Title, request.file, Path.GetFileNameWithoutExtension(request.file.FileName));
+
+                bool UploadRes = false;
+
+                UploadRes = await _fileResourceService.CreateFile(Token, model.Title, request.file, Path.GetFileNameWithoutExtension(request.file.FileName),true);
+
+
                 if (UploadRes)
                 {
                     model.IsFileUploaded = true;

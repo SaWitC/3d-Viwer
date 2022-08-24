@@ -5,9 +5,9 @@
     <h2>{{model.title}}</h2>
     <div>
       <div id="{{model.title}}"></div>
-      <app-viwer parentElementId="{{model.title}}"></app-viwer>
+      <!--<app-viwer parentElementId="{{model.title}}"></app-viwer>-->
       
-      <app-file-upload apiPath="{{apiPath}}{{model.id}}"></app-file-upload>
+    <app-file-upload class="text-white" apiPath="{{apiPath}}{{model.id}}">loading</app-file-upload>
     </div>
   </div>
 </div>

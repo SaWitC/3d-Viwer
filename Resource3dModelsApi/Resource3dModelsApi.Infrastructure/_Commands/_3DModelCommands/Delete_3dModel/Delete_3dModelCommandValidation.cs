@@ -14,6 +14,10 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Delete_3
             RuleFor(x => x.Id)
                 .NotEmpty()
                 .NotNull();
+
+            RuleFor(x => x.AvtorId)
+                .NotEmpty()
+                .NotNull();
         }
     }
 }

@@ -5,16 +5,16 @@ import { MyModelsRoutingModule } from './my-models-routing.module';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { MyModelsComponent } from './my-models.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FileUploadComponent } from '../../File/file-upload/file-upload.component';
 
 
 @NgModule({
   declarations: [
-    MyModelsComponent
+    MyModelsComponent,
+    FileUploadComponent
   ],
   imports: [
     FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
     CommonModule,
 
     MyModelsRoutingModule,

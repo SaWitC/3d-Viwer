@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Resource3dModelsApi.Domain.ConfigurationModels;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3dModel;
+using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Delete_3dModel;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3dModel;
 using Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.UploadFile;
+using Resource3dModelsApi.Infrastructure._Queries._3DModelQueries.Get_3dModelById;
 using Resource3dModelsApi.Infrastructure._Queries._3DModelQueries.GetModelsQuery;
 using Resource3dModelsApi.Infrastructure._Queries._3DModelQueries.GetMy_3dModels;
 using System.Security.Claims;
@@ -34,20 +36,34 @@ namespace Resource3dModelsApi.Controllers
         public async Task<IActionResult> Get(int page)
         {
             GetModelsQuery getModelsQuery = new GetModelsQuery();
-            if (page>0)
-                getModelsQuery.page=page;
+            if (page > 0)
+                getModelsQuery.page = page;
 
             var links = await mediator.Send(getModelsQuery);
             return Ok(links);
         }
 
-        // GET api/<_3dModelController>/5
-        [HttpGet("{id}")]
-        [Authorize]
-        public IActionResult Get(string id)
+        [HttpGet("Details/{id}")]
+        public async Task<IActionResult> GetById(string id)
         {
-            return Ok(Id.ToString());
+            try
+            {
+                Get_3dModelByIdQuery get_3DModelByIdQuery = new Get_3dModelByIdQuery();
+                get_3DModelByIdQuery.Id = id;
+                var res = await mediator.Send(get_3DModelByIdQuery);
+                if (res != null)
+                {
+                    return Ok(res);
+                }
+                return NotFound();
+            }
+            catch(Exception ex)
+            {
+                //logs
+                return StatusCode(500, ex.Message);
+            }
         }
+
 
         // POST api/<_3dModelController>
         [HttpPost]
@@ -60,14 +76,26 @@ namespace Resource3dModelsApi.Controllers
             create_3DModelCommand.AvtorId = Id.ToString();
             //create_3DModelCommand.AvtorId = Guid.NewGuid().ToString();
 
-
             var res =await mediator.Send(create_3DModelCommand);
             return Ok(res.Entity);
         }
         // DELETE api/<_3dModelController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        [Authorize]
+        public async Task<IActionResult> Delete (string id)
         {
+            try
+            {
+                Delete_3dModelCommand delete_3DModelCommand = new Delete_3dModelCommand();
+                delete_3DModelCommand.Id = id;
+                delete_3DModelCommand.AvtorId = Id.ToString();
+                await mediator.Send(delete_3DModelCommand);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, new { Error = $"Server delete exception {ex}"});
+            }
         }
         [Authorize]
         [HttpPost("Upload/{id}")]
@@ -111,10 +139,18 @@ namespace Resource3dModelsApi.Controllers
             return Ok(res);
         }
 
-        //[HttpGet()]
-        //public IActionResult GetFileLink()
-        //{
-
-        //}
+        [HttpPatch]
+        //[Authorize]
+        public async Task<IActionResult> Update(Update_3dModelCommand model)
+        {
+            try
+            {
+                await mediator.Send(model);
+                return Ok();
+            }
+            catch (Exception ex) {
+                return StatusCode(500, new { Error = $"Update error {ex}"  });
+            }
+        }
     }
 }

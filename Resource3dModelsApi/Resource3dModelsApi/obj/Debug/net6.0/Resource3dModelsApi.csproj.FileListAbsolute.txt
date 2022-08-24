@@ -76,3 +76,5 @@ C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi\bin\Deb
 C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi\bin\Debug\net6.0\YandexDisk.Client.dll
 C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

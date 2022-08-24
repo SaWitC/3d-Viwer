@@ -12,6 +12,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3
     public class Update_3dModelCommand:IRequest<EntityEntry<_3dModel>>
     {
         public _3dModel model { get; set; }
-        public string Id { get; set; }
+        public string OldModelId { get; set; }
+        public string AvtorId { get; set; }
     }
 }

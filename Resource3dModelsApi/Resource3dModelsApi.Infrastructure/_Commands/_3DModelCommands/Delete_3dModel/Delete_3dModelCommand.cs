@@ -9,6 +9,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Delete_3
 {
     public class Delete_3dModelCommand:IRequest<bool>
     {
+        public string AvtorId { get; set; }
         public string Id { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 <div>
-  <!--File upload-->
+  File upload
   <input type="file" class="file-input"
          [accept]="requiredFileType"
          (change)="onFileSelected($event)" #fileUpload>
@@ -10,14 +10,14 @@
 
     <button class=" bg-danger btn upload-btn"
             (click)="fileUpload.click()">
-      <!--<div>attach_file</div>-->
+      <div>attach_file</div>
       click me to upload
 
     </button>
 
   </div>
-  <!--    -->
-  <!--file upload progress bar-->
+      
+  file upload progress bar
   <div class="progress">
     <h1>progress</h1>
     <div class="progress-bar" *ngIf="uploadProgress">
@@ -28,5 +28,10 @@
          *ngIf="uploadProgress">delete_forever</div>
 
   </div>
-  <!---->
+  
 </div>
+
+<h1>hello</h1>
+
+
+
