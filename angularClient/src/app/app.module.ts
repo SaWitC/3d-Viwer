@@ -18,6 +18,7 @@ import { ViwerComponent } from './Components/threeJS/viwer/viwer.component';
 import { BrowsernotEnabled3dComponent } from './Components/Errors/browsernot-enabled3d/browsernot-enabled3d.component'
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FindComponent } from './Components/3dModel/find/find.component';
 //import { MyModelsModule } from './Components/3dModel/my-models/my-models.module';
 //import { RegisterModule } from './Components/Account/register/register.module';
 
@@ -35,7 +36,8 @@ export function tokenGetter() {
     //FileUploadComponent,
     //MyModelsComponent,
     ViwerComponent,
-    BrowsernotEnabled3dComponent
+    BrowsernotEnabled3dComponent,
+    FindComponent
   ],
   imports: [
     //MatIconModule,

@@ -14,6 +14,7 @@ namespace Resource3dModelsApi.Infrastructure.MapperProfiles
         public _3dModelPofile()
         {
             CreateMap<_3dModel, DetailsModel3D>();
+            CreateMap<_3dModel, MainModel3D>();
         }
     }
 }

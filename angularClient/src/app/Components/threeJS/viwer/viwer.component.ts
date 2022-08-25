@@ -20,7 +20,7 @@ export class ViwerComponent implements OnInit {
   @Input() Height: number;
   @Input() CameraPositionZ: number;
   @Input() BgColor: string;
-  @Input() Turning: boolean = true;
+  @Input() Turning: boolean = false;
 
 
 
@@ -65,7 +65,7 @@ export class ViwerComponent implements OnInit {
       console.log(model)
 
     }, undefined, function (error) {
-      console.error(error);
+      console.log(error);
     });
 
     const color = "#fff";//light

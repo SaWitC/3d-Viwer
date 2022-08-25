@@ -5,11 +5,13 @@
     "\\src\\app",
     "\\src\\app\\Components",
     "\\src\\app\\Components\\3dModel",
-    "\\src\\app\\Components\\File\\file-upload",
+    "\\src\\app\\Components\\3dModel\\my-models",
+    "\\src\\app\\Components\\threeJS",
+    "\\src\\app\\Components\\threeJS\\viwer",
+    "\\src\\app\\Models",
     "\\src\\app\\Models\\3DModel",
-    "\\src\\app\\Models\\3DModel\\Details3DModel",
-    "\\src\\app\\Services\\_3dModel"
+    "\\src\\app\\Models\\3DModel\\Short3dModel"
   ],
-  "SelectedNode": "\\src\\app\\Components\\3dModel\\details",
+  "SelectedNode": "\\src\\app\\Components\\3dModel\\find\\find.component.html",
   "PreviewInSolutionExplorer": false
 }

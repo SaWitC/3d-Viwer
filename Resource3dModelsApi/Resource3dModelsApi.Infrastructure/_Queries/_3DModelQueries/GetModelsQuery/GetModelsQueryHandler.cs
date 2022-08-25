@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Resource3dModelsApi.Application.Repository;
 using Resource3dModelsApi.Application.Services.FileResourceServices;
 using Resource3dModelsApi.Domain.Models;
+using Resource3dModelsApi.Domain.ViewModel._3dModelVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Resource3dModelsApi.Infrastructure._Queries._3DModelQueries.GetModelsQuery
 {
-    public class GetModelsQueryHandler : IRequestHandler<GetModelsQuery, IEnumerable<string>>
+    public class GetModelsQueryHandler : IRequestHandler<GetModelsQuery, IQueryable<MainModel3D>>
     {
 
         private readonly ISelectRepository selectRepository;
@@ -24,23 +25,22 @@ namespace Resource3dModelsApi.Infrastructure._Queries._3DModelQueries.GetModelsQ
             this.configuration = configuration;
         }
 
-        public async Task<IEnumerable<string>> Handle(GetModelsQuery request, CancellationToken cancellationToken)
+        public async Task<IQueryable<MainModel3D>> Handle(GetModelsQuery request, CancellationToken cancellationToken)
         {
-            var res = selectRepository.Select<_3dModel>(request.page);
+            var res = selectRepository.SelectPageWithUseAutomapper<MainModel3D, _3dModel>(request.SearchString,request.Category,request.page);
 
-            List<string> urls = new List<string>();
             var Token = configuration["FileServiceConfiguration:Token"];
 
             foreach(var x in res)
             {
                 var url =await fileResourceService.GetFileLink(Token,x.Title,x.FileTitleWithoutExtension);
                 if (!string.IsNullOrEmpty(url))
-                    urls.Add(url);
+                    x.ModelURL = url;
                 else
-                    urls.Add("Fille load exception");
+                    x.ModelURL="";
             }
 
-            return urls;
+            return res;
         }
     }
 }

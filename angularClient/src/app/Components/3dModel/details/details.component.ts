@@ -11,7 +11,7 @@ export class DetailsComponent implements OnInit {
   constructor(public modelS: ModelService) { }
 
   ngOnInit(): void {
-
+    
   }
 
 }

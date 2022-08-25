@@ -1,38 +1,71 @@
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-dark">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-    <span class="fs-4"><a class="btn text-white" routerLink="/">Главная</a></span>
-  </a>
+<header class="custom-header">
 
-  <ul class="nav nav-pills me-5">
-    <li><a class="btn text-white" routerLink="/AccountLogin">signin</a></li>
+
+  <div class="row">
+    <div class="col-12 mt-5"></div>
+    <div class="col-sm text-center"><a class="custom-btn" routerLink="/">Главная</a></div>
+    <div class="col-sm text-center"><a class="custom-btn" routerLink="/AccountLogin">signin</a></div>
+    <div class="col-sm text-center"><a class="custom-btn" routerLink="/Register">Register</a></div>
+    <div class="col-sm text-center"><a class="custom-btn" routerLink="/Find">Каталог моделей</a></div>
+  </div>
+
+
+
+
+
+  <!--<ul class="nav nav-pills me-5">
+    <li><a class="custom-btn" routerLink="/AccountLogin">signin</a></li>-->
 
     <!--<li class="nav-item">
-    <ng-template #logout>
-      <div>
-        <button (click)="logOut()" class="text-white btn">Выйти</button>
-      </div>
-    </ng-template>
-  </li>-->
-
+      <ng-template #logout>
+        <div>
+          <button (click)="logOut()" class="text-white btn">Выйти</button>
+        </div>
+      </ng-template>
+    </li>-->
     <!--<div *ngIf="auth.isAuhtenticated();">
       <li><a (click)="logout()">Logout</a></li>
     </div>-->
 
 
-    <li class="nav-item"><a class="btn text-white" routerLink="/Register">Register</a></li>
-    <li class="nav-item"><a class="btn text-white" routerLink="/PersonalData">Аккаунт</a></li>
+    <!--<li class="nav-item"><a class="custom-btn" routerLink="/Register">Register</a></li>
+    <li class="nav-item"><a class="custom-btn" routerLink="/Find">Каталог моделей</a></li>
+  </ul>-->
 
-    <li class="nav-item"> <a class="btn text-white" routerLink="/Create3dModel">CreateTest</a></li>
-    <li class="nav-item"> <a class="btn text-white" routerLink="/MyModels">MyModels</a></li>
-    <li class="nav-item"><a class="btn text-white" routerLink="/Tests">Тесты</a></li>
-  </ul>
+  
 </header>
 
-<div class="main w-100 h-100" style="width:100%">
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
+
+<div class="main w-100 h-100 " style="width:100%">
+    <div class="row">
+      <!--content-->
+      <div class="col-10">
+
+        <router-outlet></router-outlet>
+      </div>
+
+      <!--sidebar-->
+      <div class="col-2 border-left custom-sidebar">
+        <div class="text-center custom-AccDiv">
+          <div class="button-group">
+            <a class="btn">111</a>
+            <a class="btn">111</a>
+            <a class="btn">111</a>
+
+          </div>
+        </div>
+        <!--tag cloud-->
+        <div class="text-center info-Div">
+          <h5 class="text-dark">облако тегов</h5>
+        </div>
+        <div class="text-center Div-clickable-elem">
+
+        </div>
+
+      </div>
+    </div>
+
+ 
   
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

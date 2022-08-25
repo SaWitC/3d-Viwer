@@ -21,6 +21,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@types/three": "^0.143.1",
     "bootstrap": "^5.2.0",
+    "ngx-bootstrap": "^9.0.0",
     "rxjs": "~7.5.0",
     "s": "^1.0.0",
     "three": "^0.143.0",

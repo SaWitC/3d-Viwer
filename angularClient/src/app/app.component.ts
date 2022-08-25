@@ -11,8 +11,8 @@ import {AuthServiceService } from './Services/Auth/auth-service.service'
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: [
-    './app.component.css',
-    '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+    './app.component.css'
   ]
 })
 export class AppComponent implements OnInit {
@@ -20,8 +20,6 @@ export class AppComponent implements OnInit {
   constructor(public auth: AuthServiceService)
   {
     
-
-
   }
 
   ngOnInit(): void {

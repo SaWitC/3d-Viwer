@@ -1,0 +1,20 @@
+<div>
+   <div class="row mt-2">
+     <div class="col-11"><input class="form-control" style="margin-left:10px" placeholder="Ключевые слова через,"/></div>
+     <div class="col-1"><button class="btn bg-white text-dark">Поиск</button></div>
+   </div>
+
+    <div class="row">
+      <div *ngFor="let models of this.ModelS.ViewModels" class="card bg-dark col-md-4">
+        <div id="{{models.id}}"></div>
+
+        <app-viwer ModelUrl="{{models.modelURL}}" parentElementId="{{models.id}}"></app-viwer>
+        <div class="card-body">
+          <h5 class="card-title">{{models.title}}</h5>
+          <p class="card-text">{{models.createdDate}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    </div>
+</div>

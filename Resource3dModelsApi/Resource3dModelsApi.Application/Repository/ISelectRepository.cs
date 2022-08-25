@@ -13,6 +13,8 @@ namespace Resource3dModelsApi.Application.Repository
 
         IQueryable<T> SelectPageByAvtor<T>(string AvtorId, int page) where T : class, IHasAvtor;
 
+        IQueryable<TRes> SelectPageWithUseAutomapper<TRes, TBaseEntity>(string SearchString, string CategoryId, int page = 0, int size = 5) where TRes : class, IEntity where TBaseEntity : class, IEntity;
+
         
     }
 }
