@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Resource3dModelsApi.Domain.Models.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Resource3dModelsApi.Domain.Models
 {
+    [Index("Title",IsUnique =true,Name ="Title_index")]
     public class _3dModel:IEntity, IEntityWithTitle, IHasAvtor
     {
         public string Id { get; set; }

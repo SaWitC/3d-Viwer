@@ -161,6 +161,31 @@ namespace Resource3dModelsApi.Infrastructure.Services
             }
         }
 
+        public async Task<List<string>>GetlinksOfAllFilesFromDirectory(string Token,string DirPath)
+        {
+            var api = new DiskHttpApi(Token);
+
+            var rootFolderData = await api.MetaInfo.GetInfoAsync(new ResourceRequest { Path = "/" });
+            var listOfLinks = new List<string>();
+            try
+            {
+                var testFolder = await api.MetaInfo.GetInfoAsync(new ResourceRequest { Path = "/" + DirPath });
+
+                foreach (var item in testFolder.Embedded.Items)
+                {
+                    var link = await api.Files.GetDownloadLinkAsync(item.Path);
+                    //return link.Href;
+                    listOfLinks.Add(link.Href);
+                }
+                return listOfLinks;
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
 
     }
 }

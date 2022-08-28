@@ -1245,6 +1245,7 @@
       "Resource3dModelsApi.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.8",
           "Microsoft.IdentityModel.Tokens": "6.8.0"
         },
         "runtime": {

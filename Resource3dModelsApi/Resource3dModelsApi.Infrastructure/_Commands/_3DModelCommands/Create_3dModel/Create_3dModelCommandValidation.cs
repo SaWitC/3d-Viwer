@@ -14,7 +14,8 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
             RuleFor(x => x.Title)
                 .NotEmpty()
                 .MinimumLength(3)
-                .MaximumLength(30);
+                .MaximumLength(30)
+                .NotEqual("wwwroot");
 
             RuleFor(x => x.Description)
                .NotEmpty()

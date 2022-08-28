@@ -19,6 +19,8 @@ import { BrowsernotEnabled3dComponent } from './Components/Errors/browsernot-ena
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FindComponent } from './Components/3dModel/find/find.component';
+import { HomeComponent } from './Components/home/home.component';
+import { HomeService } from './Services/Home/home.service';
 //import { MyModelsModule } from './Components/3dModel/my-models/my-models.module';
 //import { RegisterModule } from './Components/Account/register/register.module';
 
@@ -37,10 +39,12 @@ export function tokenGetter() {
     //MyModelsComponent,
     ViwerComponent,
     BrowsernotEnabled3dComponent,
-    FindComponent
+    FindComponent,
+    HomeComponent
   ],
   imports: [
     //MatIconModule,
+
     CommonModule,
     BrowserModule,
     AppRoutingModule,
@@ -58,7 +62,7 @@ export function tokenGetter() {
     //RegisterModule
   ],
   exports: [JwtModule, BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [AuthServiceService, CategoryServiceService],
+  providers: [AuthServiceService, CategoryServiceService, HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

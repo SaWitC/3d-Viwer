@@ -33,6 +33,9 @@ builder.Services.AddMediatR(typeof(Resource3dModelsApi.Infrastructure.Startup).A
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 //automapper
 builder.Services.AddAutoMapper(typeof(Resource3dModelsApi.Infrastructure.Startup));
+//cache
+builder.Services.AddMemoryCache();
+
 
 
 var authOptions =builder.Configuration.GetSection("Auth").Get<AuthModel>();
