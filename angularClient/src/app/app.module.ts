@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
 import { FindComponent } from './Components/3dModel/find/find.component';
 import { HomeComponent } from './Components/home/home.component';
 import { HomeService } from './Services/Home/home.service';
+import { TagService } from './Services/Tag/tag.service';
 //import { MyModelsModule } from './Components/3dModel/my-models/my-models.module';
 //import { RegisterModule } from './Components/Account/register/register.module';
 
@@ -62,7 +63,7 @@ export function tokenGetter() {
     //RegisterModule
   ],
   exports: [JwtModule, BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [AuthServiceService, CategoryServiceService, HomeService],
+  providers: [AuthServiceService, CategoryServiceService, HomeService, TagService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

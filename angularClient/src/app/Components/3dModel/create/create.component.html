@@ -2,14 +2,23 @@
 
 <div>
 
-  <div>
+  <!--<div>
     <p class="text-danger">файл должен быть расширения jltf и в названии содержать не более 1 точки.</p>
-  </div>
+  </div>-->
 
   <form class="form-group" #form="ngForm" (ngSubmit)="Create(form)" enctype="multipart/form-data">
     <div class="form-group">
       <label>Title</label>
       <input class="input-group" name="title" type="text" #title ngModel />
+    </div>
+
+    <!--tags-->
+    <div>
+      <label>Tags</label>
+      <input id="tagstring" ngModel #tagstring type="text" name="tagstring" (input)="GetThins($event)" class="input-group">
+      <div id="TagThins" class="form-group">
+        <button type="button" *ngFor="let Tagitem of this.TagS.TagHints" (click)="insertInto($event,'tagstring')" value="{{Tagitem.title}}" >{{Tagitem.title}}</button>
+      </div>
     </div>
 
     <div class="form-group">

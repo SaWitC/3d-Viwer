@@ -16,5 +16,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
         public string category { get; set; }
 
         public string AvtorId { get; set; }
+
+        public string TagsString { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using Resource3dModelsApi.Infrastructure._Commands.HomeCommands.GetHome3dModels;
+using Resource3dModelsApi.Infrastructure._Queries.HomeQuery.GetHome3dModels;
 
 namespace Resource3dModelsApi.Controllers
 {
@@ -28,7 +28,7 @@ namespace Resource3dModelsApi.Controllers
                 return Ok(CacheRes);
             else
             {
-                GetHome3dModelsCommand getHome3DModelsCommand = new GetHome3dModelsCommand();
+                GetHome3dModelsQuery getHome3DModelsCommand = new GetHome3dModelsQuery();
                 var res = await mediator.Send(getHome3DModelsCommand);
                 if (res != null)
                     _memoryCache.Set("LinksOfFiles", res);

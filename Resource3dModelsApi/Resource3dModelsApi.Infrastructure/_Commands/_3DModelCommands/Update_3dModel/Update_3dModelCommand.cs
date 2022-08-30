@@ -14,5 +14,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3
         public _3dModel model { get; set; }
         public string OldModelId { get; set; }
         public string AvtorId { get; set; }
+        public string TagsString { get; set; }
+
     }
 }

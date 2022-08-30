@@ -4,11 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\home",
-    "\\src\\app\\Components\\threeJS\\viwer",
-    "\\src\\app\\Models\\3DModel",
-    "\\src\\app\\Models\\3DModel\\Short3dModel"
+    "\\src\\app\\Components\\3dModel",
+    "\\src\\app\\Components\\3dModel\\my-models",
+    "\\src\\app\\Models",
+    "\\src\\app\\Models\\Tag",
+    "\\src\\app\\Services",
+    "\\src\\app\\Services\\_3dModel"
   ],
-  "SelectedNode": "\\src\\app\\Components\\home\\home.component.html",
+  "SelectedNode": "\\src\\app\\Components\\3dModel\\create\\create.component.ts",
   "PreviewInSolutionExplorer": false
 }

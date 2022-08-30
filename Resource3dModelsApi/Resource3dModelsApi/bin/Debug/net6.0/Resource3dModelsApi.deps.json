@@ -13,6 +13,8 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.8",
+          "NLog.Extensions.Logging": "5.0.2",
+          "NLog.Web.AspNetCore": "5.1.1",
           "Resource3dModelsApi.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
@@ -482,6 +484,38 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.1.20722"
+          }
+        }
+      },
+      "NLog/5.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.2.1287"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/5.0.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "NLog": "5.0.2"
+        },
+        "runtime": {
+          "lib/net5.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.2.206"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/5.1.1": {
+        "dependencies": {
+          "NLog.Extensions.Logging": "5.0.2"
+        },
+        "runtime": {
+          "lib/net5.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.1.600"
           }
         }
       },
@@ -1291,6 +1325,8 @@
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
+          "NLog.Extensions.Logging": "5.0.2",
+          "NLog.Web.AspNetCore": "5.1.1",
           "Resource3dModelsApi.Application": "1.0.0",
           "YandexDisk.Client": "1.3.22"
         },
@@ -1627,6 +1663,27 @@
       "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
+    "NLog/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gucQmkaCLsyMV7OFCRwgX1J9gUDSd0ej+AZW113zmNnTtgGAicZSoE8pKPFWL6GYct1jin8i0t5SzNghyW2BWA==",
+      "path": "nlog/5.0.2",
+      "hashPath": "nlog.5.0.2.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JILCBDPXBuBj1YtLpbHj39I8JsJVkK/LimvVlBuqCsCZ8P5nxt95qWEY7aO5+bKiKZHxLctaeVnmSVrAEDeAmw==",
+      "path": "nlog.extensions.logging/5.0.2",
+      "hashPath": "nlog.extensions.logging.5.0.2.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/5.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O1diq2KQt7BA/YWHUKdG+B/NqqEk2sze+mmalfRjykclmrLG6Jlw4W6E9DPtXuFxNuoH/kP/feyZqaxC340Iig==",
+      "path": "nlog.web.aspnetcore/5.1.1",
+      "hashPath": "nlog.web.aspnetcore.5.1.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

@@ -27,6 +27,7 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Update_3
 
             RuleFor(x => x.model.AvtorId)
                .NotEmpty();
+
         }
     }
 }

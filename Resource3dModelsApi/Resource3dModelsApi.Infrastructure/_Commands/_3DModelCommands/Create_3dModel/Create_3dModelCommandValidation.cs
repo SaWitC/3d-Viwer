@@ -27,6 +27,11 @@ namespace Resource3dModelsApi.Infrastructure._Commands._3DModelCommands.Create_3
 
             RuleFor(x => x.category)
                 .NotEmpty();
+
+            RuleFor(x => x.TagsString)
+                .NotEmpty()
+                .MinimumLength(5)
+                .MaximumLength(100);
           
         }
     }

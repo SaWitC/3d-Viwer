@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ResourceServer_BaseDomain, ResourceServer__3dModelController } from '../../../env';
+import { Create3DModel } from '../../Models/3DModel/Create3DModel/create3-dmodel.model';
 import { DetailsModel3D } from '../../Models/3DModel/Details3DModel/details-model3-d.model';
 import { Model3D } from '../../Models/3DModel/model3-d.model';
 import { Short3dModel } from '../../Models/3DModel/Short3dModel/short3d-model.model';
@@ -26,7 +27,7 @@ export class ModelService {
       );
   }
 
-  public Create(model: Model3D) {
+  public Create(model: Create3DModel) {
     this.http.post(ResourceServer_BaseDomain + "api/" + ResourceServer__3dModelController, model).subscribe(res => {
       console.log(res);
     },
