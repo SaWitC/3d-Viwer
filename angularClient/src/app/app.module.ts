@@ -22,6 +22,7 @@ import { FindComponent } from './Components/3dModel/find/find.component';
 import { HomeComponent } from './Components/home/home.component';
 import { HomeService } from './Services/Home/home.service';
 import { TagService } from './Services/Tag/tag.service';
+import { IcosaedrComponent } from './Components/threeJS/icosaedr/icosaedr.component';
 //import { MyModelsModule } from './Components/3dModel/my-models/my-models.module';
 //import { RegisterModule } from './Components/Account/register/register.module';
 
@@ -41,7 +42,8 @@ export function tokenGetter() {
     ViwerComponent,
     BrowsernotEnabled3dComponent,
     FindComponent,
-    HomeComponent
+    HomeComponent,
+    IcosaedrComponent
   ],
   imports: [
     //MatIconModule,

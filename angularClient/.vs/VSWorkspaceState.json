@@ -4,13 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Components",
-    "\\src\\app\\Components\\3dModel",
-    "\\src\\app\\Components\\3dModel\\my-models",
-    "\\src\\app\\Models",
-    "\\src\\app\\Models\\Tag",
-    "\\src\\app\\Services",
-    "\\src\\app\\Services\\_3dModel"
+    "\\src\\app\\Components\\Account",
+    "\\src\\app\\Components\\Account\\account-login-component",
+    "\\src\\app\\Components\\Account\\register",
+    "\\src\\app\\Components\\threeJS"
   ],
-  "SelectedNode": "\\src\\app\\Components\\3dModel\\create\\create.component.ts",
+  "SelectedNode": "\\src\\app\\Components\\Account\\register\\register.component.ts",
   "PreviewInSolutionExplorer": false
 }

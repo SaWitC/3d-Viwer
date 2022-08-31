@@ -1,25 +1,42 @@
-<p>account-login-component works!</p>
-<h1>{{invalidLogin}}</h1>
 
-
-<div>
-  <form class="form-group" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-    <div class="form-group">
-      <h2 class="text-center">login</h2>
-      <div *ngIf="invalidLogin" class="alert alert-danger">invalid username or password</div>
-    </div>
-    <div>
-      <label>User Name</label>
-      <input #UserName id="UserName" ngModel name="UserName" placeholder="User Name" required />
-    </div>
-    <div>
-      <label>Password</label>
-      <input type="password" #Password ngModel id="Password" name="Password" placeholder="Password" required />
-    </div>
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-  </form>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" style="height:300px;" id="IcosId">
+    <app-icosaedr parentElementId="IcosId"></app-icosaedr>
+  </div>
+  <div class="col-sm-4"></div>
 </div>
 
-<button (click) ="wt()"></button>
+<div class="row">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <form class="form-group" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <div class="form-group">
+        <h2 class="text-center">login</h2>
+        <!--<div *ngIf="invalidLogin" class="alert alert-danger">invalid username or password</div>-->
+      </div>
+      <div>
+        <label>User Name</label>
+        <input #UserName="ngModel" class="form-control" id="UserName" ngModel name="UserName" placeholder="User Name" required />
+
+        <span class="text-danger" *ngIf="Submitted || (UserName.invalid && UserName.touched)">
+          UserName is required
+        </span>
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" class="form-control" #Password="ngModel" ngModel id="Password" name="Password" placeholder="Password" required />
+
+        <span class="text-danger" *ngIf="Submitted || (Password.invalid && Password.touched)">
+          Password is required
+        </span>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn-info m-3 btn" #submitbtn ngModel>Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+

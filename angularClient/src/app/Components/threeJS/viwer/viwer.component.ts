@@ -35,6 +35,8 @@ export class ViwerComponent implements OnInit {
       //console.log(parentDomElement.offsetHeight);
 
 
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(parentDomElement.offsetWidth, parentDomElement.offsetHeight);
 
 
       const scene = new THREE.Scene();
@@ -43,7 +45,8 @@ export class ViwerComponent implements OnInit {
       var isCorrectColor = new RegExp("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
 
       if (isCorrectColor.test(this.BgColor)) {
-        scene.background = new THREE.Color(this.BgColor)
+        //scene.background = new THREE.Color(this.BgColor)
+        renderer.setClearColor(0x000000,0);
       }
       else {
         scene.background = new THREE.Color("#fff")
@@ -54,15 +57,7 @@ export class ViwerComponent implements OnInit {
       ///const camera = new THREE.PerspectiveCamera(75, parentDomElement.offsetWidth / parentDomElement.offsetHeight, 0.1, 1000);
       const camera = new THREE.PerspectiveCamera(75, parentDomElement.offsetWidth / parentDomElement.offsetHeight, 0.1, 1000);
 
-
-
-
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(parentDomElement.offsetWidth, parentDomElement.offsetHeight);
       //Set into dom
-
-
-      if (parentDomElement != null)
         parentDomElement.appendChild(renderer.domElement)
       //else
       //document.body.appendChild(renderer.domElement);///////update not insert in body

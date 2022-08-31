@@ -14,14 +14,18 @@ import { LoginVM } from '../../../Models/Account/LoginVM/login-vm.model'
 export class AccountLoginComponentComponent implements OnInit {
 
   public invalidLogin: boolean = true;
+
   constructor( http: HttpClient, router: Router, public auth: AuthServiceService) { }
 
   ngOnInit(): void {
     this.invalidLogin = this.auth.invalidLogin;
   }
 
+  public Submitted: boolean = false;
+
   public login(ngForm: NgForm) {
 
+    this.Submitted = true;
     var model = new LoginVM();
 
     model.UserName = ngForm.value.UserName;
