@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Text.Json;
 
+
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace IdentityServer.Controllers
@@ -20,17 +21,24 @@ namespace IdentityServer.Controllers
 
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IBaseRepository _baseRepository;
+        private readonly ITokenRepository _tokenRepository;
+
         //private ILogger<AccountController> _logger;
         private readonly IAccountRepository _accountRepository;
         public AccountController(UserManager<User> userManager,
             SignInManager<User> signInManager,
             //ILogger<AccountController> logger,
-            IAccountRepository accountRepository)
+            IAccountRepository accountRepository,
+            IBaseRepository baseRepository,
+            ITokenRepository tokenRepository)
         {
+            _baseRepository = baseRepository;
             _userManager = userManager;
             _signInManager = signInManager;
             //_logger = logger;
             _accountRepository = accountRepository;
+            _tokenRepository = tokenRepository;
         }
 
         [HttpPost]
@@ -99,11 +107,60 @@ namespace IdentityServer.Controllers
 
         }
 
-        //[HttpGet("[action]")]
-        //[Authorize]
-        //public IActionResult wt()
-        //{
-        //    return Ok(/*Id.ToString()*/);
-        //}
+        [HttpGet("[action]")]
+        public async Task<IActionResult> Logout()
+        {
+
+            var headers = Request.Headers.ToList();
+            var token = GetToken(Request.Headers);
+
+            if (!string.IsNullOrEmpty(token))
+            {
+               // var model = new JwtModel();
+               // model.jwtTokenId = token;
+
+                await _tokenRepository.CreateAsync(token);
+                await _baseRepository.SaveChangesAsync();
+            }
+
+            return Ok();
+        }
+
+        //[HttpGet("api/[controller]/isTokinValid")]
+        [HttpGet("isTokinValid")]
+
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        
+        public async Task<IActionResult> IsTokinValid()
+        {
+            var listOfHeaders = Request.Headers.ToList();
+            var token = GetToken(Request.Headers);
+
+            var FoundedToken = await _tokenRepository.GetByTokenAsync(token);
+
+            var user =await _userManager.FindByIdAsync(Id.ToString());
+
+            if (FoundedToken == null)
+                return Ok(user);
+            else
+                return Unauthorized();
+        }
+
+
+        private string GetToken(IHeaderDictionary keyValuePairs)
+        {
+            var headers =keyValuePairs.ToList();
+
+            var token = "";
+            foreach (var item in headers)
+            {
+                if (item.Key == "Authorization")
+                {
+                    token = item.Value.ToString().Split()[1];
+                    break;
+                }
+            }
+            return token;
+        }
     }
 }

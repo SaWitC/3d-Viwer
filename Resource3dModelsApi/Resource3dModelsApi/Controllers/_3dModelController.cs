@@ -133,10 +133,10 @@ namespace Resource3dModelsApi.Controllers
         public async Task<IActionResult> GetMy_3dModels(int page)
         {
             GetMy_3dModelsQuery getMy_3DModelQuery = new GetMy_3dModelsQuery();
-                getMy_3DModelQuery.AvtorId = Id.ToString();
+            getMy_3DModelQuery.AvtorId = Id.ToString();
             var res = await mediator.Send(getMy_3DModelQuery);
 
-            return Ok(res);
+            return Ok();
         }
 
         [HttpPatch]

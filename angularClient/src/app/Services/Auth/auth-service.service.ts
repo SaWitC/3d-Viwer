@@ -35,12 +35,18 @@ export class AuthServiceService {
   }
 
   logOut() {
-    localStorage.removeItem("jwt");
+    console.log("try logout")
+    this.http.get(Identityserver_BaseDomain + "Logout").subscribe(res => {
+      console.log("Complete")
+    }, err => {
+      console.log(err);
+    })
+    //localStorage.removeItem("jwt");
     this.invalidLogin = true;
   }
 
   Register(RegisterVM: RegisterVM) {
-    return this.http.post(Identityserver_BaseDomain + "/api/Account/Register", RegisterVM).subscribe(
+    return this.http.post(Identityserver_BaseDomain + "api/Account/Register", RegisterVM).subscribe(
       response => {
         console.log("Done");
         this.ErrorMessage = '';
@@ -55,9 +61,11 @@ export class AuthServiceService {
 
 
   login(model: LoginVM) {
-    this.http.post(Identityserver_BaseDomain + "/api/Account/login", model).subscribe(
+    this.http.post(Identityserver_BaseDomain + "api/Account/login", model).subscribe(
       response => {
         const token: string = (<any>response).token;
+
+        console.log(token)
         localStorage.setItem("jwt", token);
         this.invalidLogin = false;
         this.router.navigate(["/"]);

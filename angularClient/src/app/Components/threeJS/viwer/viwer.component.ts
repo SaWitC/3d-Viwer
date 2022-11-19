@@ -106,7 +106,7 @@ export class ViwerComponent implements OnInit {
       //render
       renderer.render(scene, camera);
       //animation
-      if (this.Turning) {
+      if (this.Turning && model != null) {
         function animate() {
           //camera =  THREE.PerspectiveCamera(75, parentDomElement.offsetWidth / parentDomElement.offsetHeight, 0.1, 1000);
           if (parentDomElement != null)

@@ -3,12 +3,7 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Components",
-    "\\src\\app\\Components\\Account",
-    "\\src\\app\\Components\\Account\\account-login-component",
-    "\\src\\app\\Components\\Account\\register",
-    "\\src\\app\\Components\\threeJS"
+    "\\src\\app\\Services\\Validation"
   ],
-  "SelectedNode": "\\src\\app\\Components\\Account\\register\\register.component.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -22,6 +22,16 @@ namespace Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("DataAcces.Models.JwtModel", b =>
+                {
+                    b.Property<string>("jwtTokenId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("jwtTokenId");
+
+                    b.ToTable("jwtModels");
+                });
+
             modelBuilder.Entity("DataAcces.Models.User", b =>
                 {
                     b.Property<string>("Id")

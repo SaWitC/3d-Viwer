@@ -20,7 +20,7 @@
         <label>User Name</label>
         <input #UserName="ngModel" class="form-control" id="UserName" ngModel name="UserName" placeholder="User Name" required />
 
-        <span class="text-danger" *ngIf="Submitted || (UserName.invalid && UserName.touched)">
+        <span class="text-danger" *ngIf="(Submitted && Password.invalid) || (UserName.invalid && UserName.touched)">
           UserName is required
         </span>
       </div>
@@ -28,7 +28,7 @@
         <label>Password</label>
         <input type="password" class="form-control" #Password="ngModel" ngModel id="Password" name="Password" placeholder="Password" required />
 
-        <span class="text-danger" *ngIf="Submitted || (Password.invalid && Password.touched)">
+        <span class="text-danger" *ngIf="(Submitted && Password.invalid) || (Password.invalid && Password.touched)">
           Password is required
         </span>
       </div>

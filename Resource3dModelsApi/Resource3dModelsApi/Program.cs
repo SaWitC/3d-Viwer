@@ -14,9 +14,11 @@ using System.Reflection;
 using NLog;
 using NLog.Web;
 using Resource3dModelsApi.Application.Services.TagServices;
+using Resource3dModelsApi.Infrastructure.Midlewares;
+using Resource3dModelsApi.Infrastructure.CustomHttpClients.AuthorizationClient;
 
-var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
-logger.Debug("init main");
+//var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+//logger.Debug("init main");
 
 try
 { 
@@ -47,7 +49,16 @@ try
     builder.Services.AddAutoMapper(typeof(Resource3dModelsApi.Infrastructure.Startup));
     //cache
     builder.Services.AddMemoryCache();
+    //httpClients
+    builder.Services.AddHttpClient<AuthorizationClient>("AccountClient");
 
+    builder.Services.AddTransient<IAuthorizationClient>(ctx =>
+    {
+        var clientFactory = ctx.GetRequiredService<IHttpClientFactory>();
+        var httpClient = clientFactory.CreateClient("AccountClient");
+
+        return new AuthorizationClient(httpClient);
+    });
 
 
     var authOptions =builder.Configuration.GetSection("Auth").Get<AuthModel>();
@@ -59,24 +70,26 @@ try
         o.MemoryBufferThreshold = int.MaxValue;
     });
 
+    builder.Services.AddAuthorization();
+    //---------------------------------
 
-    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-    {
-        options.RequireHttpsMetadata = false;
-        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidIssuer = authOptions.Issuer,
+    //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+    //{
+    //    options.RequireHttpsMetadata = false;
+    //    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    //    {
+    //        ValidateIssuer = true,
+    //        ValidIssuer = authOptions.Issuer,
 
-            ValidateAudience = true,
-            ValidAudience = authOptions.Audience,
+    //        ValidateAudience = true,
+    //        ValidAudience = authOptions.Audience[0],
 
-            ValidateLifetime = true,
+    //        ValidateLifetime = true,
 
-            IssuerSigningKey = authOptions.GetSymetricSecurityKey(),
-            ValidateIssuerSigningKey = true
-        };
-    });
+    //        IssuerSigningKey = authOptions.GetSymetricSecurityKey(),
+    //        ValidateIssuerSigningKey = true
+    //    };
+    //});
 
     builder.Services.AddCors(o =>
     {
@@ -118,6 +131,8 @@ try
 
     app.UseStaticFiles();
 
+    //app.UseMiddleware<CheckTokenMidleware>();
+    app.UseMiddleware<CheckTokenMidleware>();
     app.UseAuthentication();
     app.UseAuthorization();
 
@@ -129,11 +144,11 @@ try
 catch (Exception exception)
 {
     // NLog: catch setup errors
-    logger.Error(exception, "Stopped program because of exception");
+    //logger.Error(exception, "Stopped program because of exception");
     throw;
 }
 finally
 {
     // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
-    NLog.LogManager.Shutdown();
+    //NLog.LogManager.Shutdown();
 }

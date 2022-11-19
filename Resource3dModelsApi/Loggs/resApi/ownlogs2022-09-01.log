@@ -1,0 +1,5 @@
+2022-09-01 11:50:23.7425|0|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7006 |url: |action: |Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync
+2022-09-01 11:50:23.7527|0|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5006 |url: |action: |Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync
+2022-09-01 11:50:23.7527|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-09-01 11:50:23.7527|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-09-01 11:50:23.7527|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\USER\Downloads\3d-Viwer\Resource3dModelsApi\Resource3dModelsApi\ |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted

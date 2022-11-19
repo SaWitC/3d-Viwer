@@ -23,6 +23,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { HomeService } from './Services/Home/home.service';
 import { TagService } from './Services/Tag/tag.service';
 import { IcosaedrComponent } from './Components/threeJS/icosaedr/icosaedr.component';
+import { ValidationService } from './Services/Validation/validation.service';
 //import { MyModelsModule } from './Components/3dModel/my-models/my-models.module';
 //import { RegisterModule } from './Components/Account/register/register.module';
 
@@ -65,7 +66,7 @@ export function tokenGetter() {
     //RegisterModule
   ],
   exports: [JwtModule, BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [AuthServiceService, CategoryServiceService, HomeService, TagService],
+  providers: [AuthServiceService, CategoryServiceService, HomeService, TagService, ValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

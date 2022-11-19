@@ -17,5 +17,7 @@ namespace Persistence.Data
         {
         }
 
+        public DbSet<JwtModel> jwtModels { get; set; }
+
     }
 }

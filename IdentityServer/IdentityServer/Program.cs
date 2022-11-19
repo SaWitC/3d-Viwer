@@ -32,6 +32,9 @@ namespace IdentityServer
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+            builder.Services.AddScoped<IBaseRepository, Repository>();
+            builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+
 
             var authOptions = builder.Configuration.GetSection("Auth");
             builder.Services.Configure<AuthOptions>(authOptions);
